@@ -74,8 +74,8 @@ defaults:
 # 7. Site settings
 encoding: utf-8 # Make sure the encoding is right
 lang: en-AU # Set the site language
-title: "Alembic" # Site name or title, also used in jekyll-seo-tag
-logo: "/assets/logo.svg" # Site logo, also used in jekyll-seo-tag
+title: "Types and Terror" # Site name or title, also used in jekyll-seo-tag
+logo: "https://avatars3.githubusercontent.com/u/1120798?s=460&v=4" # Site logo, also used in jekyll-seo-tag
 # Site description and default description, also used in jekyll-seo-tag
 description: "I'm a software engineer with an interest in AI.
 I love Haskell, Vim and Sushi."
@@ -92,21 +92,18 @@ css_inline: true # Will insert all styles into a single <style> block in the <he
 # 8. Site navigation
 navigation_header:
   Home: /
-  Elements: /elements/
+  Contact: /contact/
   Blog: /blog/
   Categories: /categories/
   Search: /search/
-  Fork Alembic: https://github.com/daviddarnes/alembic
 
 navigation_footer:
-  Created by Josh Pratt: https://darn.es
+  Created by Josh Pratt: https://github.com/cypher1
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   Twitter: https://twitter.com/JoshPratt9
   LinkedIn: https://www.linkedin.com/in/joshuarpratt
-  Google+: https://plus.google.com/+JoshuaPratt
   GitHub: https://github.com/Cypher1
-  link: https://cypher1.github.io
   RSS: /feed.xml
 
 sharing_links: # Appear at the bottom of single blog posts, uncomment and comment out as desired. Colours set the button colour
