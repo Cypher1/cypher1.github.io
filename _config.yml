@@ -58,9 +58,9 @@ collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    description: "Today, the pattern of lights is all wrong." # The post list page content
+    description: "" # The post list page content
     feature_text: |
-      Welcome to the blog
+      Today, the pattern of lights is all wrong.
     feature_image: "https://picsum.photos/2560/600?image=866"
 
 # 6. Jekyll collections settings
@@ -75,7 +75,7 @@ defaults:
 encoding: utf-8 # Make sure the encoding is right
 lang: en-AU # Set the site language
 title: "Types and Terror" # Site name or title, also used in jekyll-seo-tag
-logo: "https://avatars3.githubusercontent.com/u/1120798?s=460&v=4" # Site logo, also used in jekyll-seo-tag
+logo: "/assets/avatar.png" # Site logo, also used in jekyll-seo-tag
 # Site description and default description, also used in jekyll-seo-tag
 description: "I'm a software engineer with an interest in AI.
 I love Haskell, Vim and Sushi."
