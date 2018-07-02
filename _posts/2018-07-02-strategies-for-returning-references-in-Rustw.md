@@ -1,4 +1,5 @@
 ---
+published: false
 title: Strategies for returning references in Rust
 category:
 - Rust

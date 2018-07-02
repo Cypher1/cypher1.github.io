@@ -1,4 +1,5 @@
 ---
+published: false
 title: Writing a tiny JS game
 category:
 - Javascript

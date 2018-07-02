@@ -1,4 +1,5 @@
 ---
+published: false
 title: Setting up a Blog with Git
 category: Blogging
 excerpt: |
