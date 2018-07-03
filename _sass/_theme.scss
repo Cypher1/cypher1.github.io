@@ -45,6 +45,10 @@ body {
   padding-bottom: .4rem;
   margin-bottom: 1.6rem;
   text-align: center;
+  color: $backgroundColour;
+  -webkit-text-fill-color: $backgroundColour;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $bodyColour;
   background: $featureBackgroundColour;
   background-size: cover;
   background-position: center;
