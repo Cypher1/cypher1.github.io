@@ -36,12 +36,12 @@ paginate: 2 # jekyll-paginate > items per page
 paginate_path: blog/page:num # jekyll-paginate > blog page
 jekyll-mentions: https://twitter.com # jekyll-mentions > service used when @replying
 twitter:
-  username: JoshPratt9 # jekyll-seo-tag > Owners twitter username
-author: JoshPratt # jekyll-seo-tag > default author
+  username: JoshuaPratt9 # jekyll-seo-tag > Owners twitter username
+author: Josh Pratt # jekyll-seo-tag > default author
 social: # jekyll-seo-tag > social overrides
   name: Josh Pratt # jekyll-seo-tag > real name
   links:  # jekyll-seo-tag > social aliases (sameAs)
-    - https://twitter.com/JoshPratt9
+    - https://twitter.com/JoshuaPratt9
     - https://www.linkedin.com/in/joshuarpratt
     - https://plus.google.com/+JoshuaPratt
     - https://github.com/Cypher1
@@ -101,7 +101,7 @@ navigation_footer:
   Created by Josh Pratt: https://github.com/cypher1
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
-  Twitter: https://twitter.com/JoshPratt9
+  Twitter: https://twitter.com/JoshuaPratt9
   LinkedIn: https://www.linkedin.com/in/joshuarpratt
   GitHub: https://github.com/Cypher1
   RSS: /feed.xml
