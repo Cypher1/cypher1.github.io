@@ -2,12 +2,14 @@
 title: Hi
 feature_text: |
   ## Types and Terror
-feature_image: "TODO(jopra)"
+feature_image: "/assets/imgs/koz1.JPG"
 excerpt: "TODO(jopra)"
 ---
 
-In 2018 I started working full time. This gave me some time to think about how I might try to give back to the software development community that has given me so much.
+In 2018 I started working full time as a software developer. This gave me some time to think about how I might try to give back to the software development community.
 
-I'm hoping to write about my experiences in the software industry, both as a 'script kiddy'/self-taught computer nerd and as a paid software engineer. I love learning more about the languages and tools that I use and being able to add something to them and I would love to be able to help someone else do the same.
+I'm hoping to write about my experiences in the software industry, problems I've faced with tools and solutions/hacks that I've discovered (or been gifted) along the way.
+
+I have a particular interest in 'safe' languages, machine learning, and logic engines. Specifically I'm a big fan of Haskell and Rust, but have more experience in C++ and Python.
 
 If you have any questions or fixes you can message me at [the contact form](/contact).
