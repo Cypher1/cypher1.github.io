@@ -9,8 +9,8 @@ feature_text: |
 
   Regularly? Probably not.
   Informal? Got that in the bag.
-feature_image: "https://picsum.photos/2560/600?image=733"
-image: "https://picsum.photos/2560/600?image=733"
+feature_image: "/assets/imgs/koz2.JPG"
+image: "/assets/imgs/koz2.JPG"
 ---
 
 Hi, I'm Josh. I write software for a living and actually really enjoy it. Well, most of the time.
