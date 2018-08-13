@@ -3,13 +3,12 @@
 import sys
 import datetime
 
-DRAFT = """
----
+DRAFT = """---
 published: false
 title: {title}
 category: {category}
-excerpt: | TODO:Excerpt here!
-feature_text: | TODO:Feature text here!
+excerpt: TODO:Excerpt here!
+feature_text: TODO:Feature text here!
 feature_image: "https://picsum.photos/2560/600?image=733"
 image: "https://picsum.photos/2560/600?image=733"
 ---
@@ -19,14 +18,16 @@ TODO:Content goes here
 """
 
 def getArg(desc, argv):
+    print(argv)
     if argv == []:
         value = raw_input(desc)
     else:
-        value = argv.pop()
+        value = argv.pop(0)
+        print("Using arg: "+value)
     return value
 
 def main():
-    _path = sys.argv.pop()
+    _path = sys.argv.pop(0)
     title = getArg("Title: ", sys.argv)
     category = getArg("Categories (comma separated): ", sys.argv)
 
