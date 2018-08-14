@@ -60,7 +60,7 @@ collections:
     output: true
     description: "" # The post list page content
     feature_text: |
-      Today, the pattern of lights is all wrong.
+      ## Today, the pattern of lights is all wrong.
     feature_image: "https://picsum.photos/2560/600?image=866"
 
 # 6. Jekyll collections settings
