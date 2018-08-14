@@ -5,10 +5,7 @@ category: Blogging
 excerpt: |
   My first post will just cover some of the steps I took to set this site up as a bit of a walk through. If you're not wanting to build a site today feel free to look through it anyway.
 feature_text: |
-  **Blog**: a regularly updated website typically one run by an individual that is written in an informal style.
-
-  Regularly? Probably not.
-  Informal? Got that in the bag.
+  **Blog: a ~~regularly~~ updated website**
 feature_image: "/assets/imgs/koz2.JPG"
 image: "/assets/imgs/koz2.JPG"
 ---
