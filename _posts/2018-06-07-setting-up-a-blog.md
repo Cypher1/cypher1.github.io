@@ -22,39 +22,48 @@ It'll be far easier if you already use a terminal regularly and are familiar wit
 
 First up, I want to thank David Darnes who make the [Alembic theme](https://alembic.darn.es). That theme is responsible for the majority of the styling (and a significant portion of the functionality) of the site. He did an awesome job and even included some really nice features like a service worker, RSS feed, and search and contact pages.
 
-I plan to tweak it further to suit my needs but the theme is a lovely collection of useful templates and [CSS](TODO) and is easy to install and use.
+I plan to tweak it further to suit my needs but the theme is a lovely collection of useful templates and [CSS](https://www.w3schools.com/css/) and is easy to install and use.
 
-For hosting, I'm using [Github Pages](TODO), a very neat static site tool built by and integrated with Github. It takes a bunch of configuration files and pages written in [Markdown](TODO) and turns them into a site that runs on `$USERNAME.github.io` for free.
+For hosting, I'm using [Github Pages](https://pages.github.com/), a very neat static site tool built by and integrated with Github. It takes a bunch of configuration files and pages written in [Markdown](https://www.markdowntutorial.com/) and turns them into a site that runs on `$USERNAME.github.io` for free.
 
-P.S. I'm going to use `this notation` to show that I mean a command that can be run in your terminal and `$this_notation` to show that the value might not be the same for everyone and should be something you set up or something already available in your [shell](TODO).
+P.S. I'm going to use `this notation` to show that I mean a command that can be run in your terminal and `$this_notation` to show that the value might not be the same for everyone and should be something you set up or something already available in your [shell](https://www.shellscript.sh/).
 
 ## Steps
 
 
 #### 1. Get a Github account or use one that you already have.
 
-Sign up [here:  https://github.com/ ](https://github.com/) (or you can use other hosts for git and your site if you are already familiar with them).
+Sign up at [https://github.com/](https://github.com/) (or you can use other hosts for git and your site if you are already familiar with them).
       
 #### 2. Create a new repository called `$USERNAME.github.io`.
-  - Use [https://github.com/new](https://github.com/new)
+  - Use [https://github.com/new](https://github.com/new) if you're using Github.
   - Call it `$USERNAME.github.io` (a special repository name that tells github that you want to use it as a github pages site.
 
-#### 3. Read a bit about Git and install 'git'
-You might need to find a tutorial, here's some to help you out.
-  - For most Linux users: `sudo apt install git`
-  - For Mac users: I recommend `brew install git` if you use [Homebrew](https://github.com/Homebrew/brew).
-  - For windows users:
-      - Installing Git – the easy way
-        - [ https://gist.github.com/derhuerst/1b15ff4652a867391f03 ](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
-      - Setting up Git and Github on your Mac
-        - [ http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/ ](http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/)
+#### 3. Install 'git'
+Git is a really useful tool for managing (mostly text) files that change over time while also being edited by multiple people. It's a pretty complex piece of software so I'll point you to some other tutorials about it.
+
+Here's some to get git installed on a few common platforms:
+- For most Linux users: `sudo apt install git`
+- For Mac users: I recommend `brew install git` ([Homebrew](https://github.com/Homebrew/brew) is really awesome).
+- Setting up Git and Github on your Mac
+  - [ http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/ ](http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/)
+- For windows users:
+  - Installing Git – the easy way
+    - [ https://gist.github.com/derhuerst/1b15ff4652a867391f03 ](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
 #### 4. Install ruby, bundler, jekyll, an editor etc.
-Again for linux users either you can probably use `apt install ruby bundler jekyll` (or you proabably know how to install packages yourself).
-  - Mac users `brew install ruby jekyll`
-  - Windows users `TODO`
+There's an official quite start guide to jekyll (here)[https://jekyllrb.com/docs/quickstart/] but I'll add a tldr.
+
+- Linux: Again for linux users either you can probably use `apt install ruby` (or you proabably know how to install packages yourself).
+
+- Mac: Similar to linux `brew install ruby`
+- Windows users can use (rubyinstaller)[https://rubyinstaller.org/] but I can't promise that it works particularly well.
+
+Now that we all have ruby, we can use it's package manager (gem) to install jekyll (and bundler) tools for running the site:
+`gem install jekyll bundler`.
+
 #### 5. Create a new Jekyll site
-  - `jekyll new $USERNAME.github.io`
+Now it's time to build a skeleton for your site. You can use a template online (I used the [Alembic theme](https://alembic.darn.es)) or use `jekyll new $USERNAME.github.io` to make a completely clean new site.
   - `cd $USERNAME.github.io`
 #### 6. Set up your repo.
   - Turn the jekyll site into a git repo.
