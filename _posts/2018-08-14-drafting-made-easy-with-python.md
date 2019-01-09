@@ -6,8 +6,8 @@ excerpt: |
     TODO:Excerpt here!
 feature_text: |
     ## TODO:Feature text here!
-feature_image: "https://picsum.photos/2560/600?image=733"
-image: "https://picsum.photos/2560/600?image=733"
+feature_image: "/assets/imgs/koz1.JPG"
+image: "/assets/imgs/koz1.JPG"
 ---
 
 TODO:Content goes here

@@ -6,8 +6,8 @@ excerpt: |
     TODO
 feature_text: |
     **Some fun with Polymorphism**
-feature_image: "https://picsum.photos/2560/600?image=733"
-image: "https://picsum.photos/2560/600?image=733"
+feature_image: "/assets/imgs/koz1.JPG"
+image: "/assets/imgs/koz1.JPG"
 ---
 
 I recently wrote something like the following:

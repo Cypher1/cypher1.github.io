@@ -2,7 +2,7 @@
 title: Contact
 feature_text: |
   ## G'day
-feature_image: "https://picsum.photos/2560/600?image=873"
+feature_image: "/assets/imgs/koz1.JPG"
 aside: true
 ---
 
