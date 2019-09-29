@@ -1,6 +1,7 @@
 {% if site.navigation_footer %}
 <nav class="nav  nav--footer">
   <ul class="list list--nav">
+    <small class="small">
     {% for item in site.navigation_footer %}
 
       {% if item[1] contains '://' %}
@@ -12,6 +13,7 @@
       <li class="item  item--nav{% if item[1] == page.url %}  item--current{% endif %}">
         <a href="{{ url }}">{{ item[0] }}</a>
       </li>
+    </small>
     {% endfor %}
   </ul>
 </nav>

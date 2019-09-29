@@ -1,7 +1,7 @@
 ---
 title: Hi
 feature_text: |
-  ## Types and Terror
+  ## Types & Terror
 feature_image: "/assets/imgs/koz1.JPG"
 image: "/assets/imgs/koz1.JPG"
 ---

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python3
 
 import sys
 import datetime
@@ -21,7 +21,7 @@ TODO:Content goes here
 
 def getArg(desc, argv):
     if argv == []:
-        value = raw_input(desc)
+        value = str(input(desc))
     else:
         value = argv.pop(0)
         print("Using arg: "+value)
