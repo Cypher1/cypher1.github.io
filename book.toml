@@ -1,0 +1,6 @@
+[book]
+authors = ["Joshua Pratt"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Types and Terror"
