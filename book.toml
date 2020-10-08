@@ -1,6 +1,21 @@
 [book]
-authors = ["Joshua Pratt"]
 language = "en"
 multilingual = false
 src = "src"
 title = "Types and Terror"
+authors = ["Joshua Pratt"]
+
+[output.html]
+
+[output.linkcheck]
+follow-web-links = false
+
+exclude = [ 'google\.com' ]
+
+# The User-Agent to use when sending web requests
+user-agent = "mdbook-linkcheck-0.4.0"
+
+[output.linkcheck.http-headers]
+# Any hyperlink that contains this regexp will be sent
+# the "Accept: text/html" header
+'crates\.io' = ["Accept: text/html"]

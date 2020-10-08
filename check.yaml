@@ -1,0 +1,26 @@
+generate-book:
+  stage: build
+  image:
+    name: michaelfbryan/mdbook-docker-image:latest
+    entrypoint: [""]
+  script:
+    - mdbook build $BOOK_DIR
+  artifacts:
+    paths:
+      - $BOOK_DIR/book/html
+    # make sure GitLab doesn't accidentally keep every book you ever generate
+    # indefinitely
+    expire_in: 1 week
+
+pages:
+  image: busybox:latest
+  stage: deploy
+  dependencies:
+    - generate-book
+  script:
+    - cp -r $BOOK_DIR/book/html public
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
