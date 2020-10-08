@@ -5,7 +5,15 @@ src = "src"
 title = "Types and Terror"
 authors = ["Joshua Pratt"]
 
+[build]
+build-dir = "book"
+create-missing = false
+
+[preprocessor.index]
+[preprocessor.links]
+
 [output.html]
+additition-css = ["assets/custom.css"]
 
 [output.linkcheck]
 follow-web-links = false
