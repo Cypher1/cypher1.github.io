@@ -1,4 +1,4 @@
----
+<!--
 published: false
 title: Writing a tiny JS game
 category:
@@ -12,7 +12,7 @@ feature_text: |
   ## Javascript can be painful, so try to write as little of it as possible.
 feature_image: "/assets/imgs/koz1.JPG"
 image: "/assets/imgs/koz1.JPG"
----
+-->
 
 Done!
 

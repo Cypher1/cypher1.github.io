@@ -1,4 +1,4 @@
----
+<!--
 published: false 
 title: Setting up a Blog with Git
 category: Blogging
@@ -8,7 +8,7 @@ feature_text: |
   ## Blog: a ~~regularly~~ updated website
 feature_image: "/assets/imgs/koz2.JPG"
 image: "/assets/imgs/koz2.JPG"
----
+-->
 
 Hi, I'm Josh. I write software for a living and actually really enjoy it. Well, most of the time.
 

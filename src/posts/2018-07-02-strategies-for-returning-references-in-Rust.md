@@ -1,10 +1,10 @@
----
+<!--
 published: false
 title: Strategies for returning references in Rust
 category:
 - Rust
 - Languages
----
+-->
 
 A really neat explanation of some approaches to references in Rust.
 

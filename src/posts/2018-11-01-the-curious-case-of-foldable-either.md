@@ -1,4 +1,4 @@
----
+<!--
 published: false
 title: The curious case of Either's Foldable instance
 category: [Haskell, Types, Debugging]
@@ -8,7 +8,7 @@ feature_text: |
     **Some fun with Polymorphism**
 feature_image: "/assets/imgs/koz1.JPG"
 image: "/assets/imgs/koz1.JPG"
----
+-->
 
 I recently wrote something like the following:
 ```haskell
