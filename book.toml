@@ -17,7 +17,7 @@ additition-css = ["assets/custom.css"]
 
 [output.linkcheck]
 follow-web-links = false
-
+warning-policy = "warn"
 exclude = [ 'google\.com' ]
 
 # The User-Agent to use when sending web requests
