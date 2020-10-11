@@ -12,8 +12,10 @@ book: src book.toml src/SUMMARY.md
 
 deploy: book
 	@echo "====> deploying to github"
-	rm -rf /tmp/book
+	rm -rf /tmp/book/
+	mkdir /tmp/book/
 	git worktree add /tmp/book gh-pages -f
+	cp -rp book/* /tmp/book/
 	cp -rp CNAME /tmp/book/
 	touch /tmp/book/.nojekyll
 	cd /tmp/book && \
