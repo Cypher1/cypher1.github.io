@@ -8,3 +8,4 @@
 - [Lost - 13kb of js](posts/2018-10-05-lost-13kb-of-js.md)
 - [The curious case of Either's Foldable instance](posts/2018-11-01-the-curious-case-of-foldable-either.md)
 - [Git backed Configuration](posts/2019-01-09-my-castle-(dotfiles-in-git).md)
+- [Contact](contact.md)
