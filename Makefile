@@ -1,7 +1,8 @@
 .PHONY: deploy
 deploy: book
+	rm -rf /tmp/book
 	@echo "====> deploying to github"
-	git worktree add /tmp/book gh-pages
+	git worktree add /tmp/book gh-pages -f
 	rm -rf /tmp/book/*
 	cp -rp book/* /tmp/book/
 	cd /tmp/book && \
