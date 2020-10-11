@@ -4,6 +4,7 @@ multilingual = false
 src = "src"
 title = "Types and Terror"
 authors = ["Joshua Pratt"]
+theme = "src/theme"
 
 [build]
 build-dir = "book"
