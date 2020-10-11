@@ -1,6 +1,6 @@
 # Contact
 
-Feel free to give me a ping if you need a hand, have an idea you want to discuss or find a post I can improve on.
+Feel free to write me an email [here](mailto:joshua.pratt+blog@bigpond.com) if you need a hand, have an idea you want to discuss or find a post I can improve on.
 
 <img class="center circle-image" width="20%" src="./imgs/avatar.png"/>
 
