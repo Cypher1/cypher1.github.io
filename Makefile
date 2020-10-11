@@ -2,7 +2,11 @@
 
 all: deploy
 
-book: src book.toml
+src/SUMMARY.md: src/posts/*.md
+	@echo "====> updating SUMMARY.md"
+	./gen.sh
+
+book: src book.toml src/SUMMARY.md
 	@echo "====> building"
 	mdbook build
 
