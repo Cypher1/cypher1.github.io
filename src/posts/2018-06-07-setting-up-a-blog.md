@@ -52,12 +52,12 @@ Here's some to get git installed on a few common platforms:
     - [ https://gist.github.com/derhuerst/1b15ff4652a867391f03 ](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
 #### 4. Install ruby, bundler, jekyll, an editor etc.
-There's an official quite start guide to jekyll (here)[https://jekyllrb.com/docs/quickstart/] but I'll add a tldr.
+There's an official quite start guide to jekyll [here](https://jekyllrb.com/docs/quickstart/) but I'll add a tldr.
 
 - Linux: Again for linux users either you can probably use `apt install ruby` (or you proabably know how to install packages yourself).
 
 - Mac: Similar to linux `brew install ruby`
-- Windows users can use (rubyinstaller)[https://rubyinstaller.org/] but I can't promise that it works particularly well.
+- Windows users can use [rubyinstaller](https://rubyinstaller.org/) but I can't promise that it works particularly well.
 
 Now that we all have ruby, we can use it's package manager (gem) to install jekyll (and bundler) tools for running the site:
 `gem install jekyll bundler`.
@@ -78,7 +78,7 @@ Now it's time to build a skeleton for your site. You can use a template online (
 The command that we are going to use to run the site locally is:
 `jekyll server --livereload`
 
-This tells `jekyll` the program that builds the site to run a server locally (it should be on [localhost:4000](localhost:4000)). The `--livereload` flag tells jekyll to reload the site when the source files change. This makes it easy to modify the site quickly and see what the outcome is.
+This tells `jekyll` the program that builds the site to run a server locally (it should be on localhost:4000. The `--livereload` flag tells jekyll to reload the site when the source files change. This makes it easy to modify the site quickly and see what the outcome is.
 
 If you're looking around for things to change try looking in `./_posts`, 
 

@@ -14,7 +14,7 @@ image: "/assets/imgs/koz3.JPG"
 
 I've been using Linux for a little while and along the way have accumulated a fair bit of configuration (even though I try to remove the bits I don't need anymore).
 
-I often find that these configs help me out (e.g. [my Vim config](/posts/2018-10-01-init.vim-(the-best-bits)/)) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.
+I often find that these configs help me out (e.g. [my Vim config](../posts/2018-10-01-init.vim-(the-best-bits).md)) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.
 
 What amazing tool could solve my configuration backup problem?
 
@@ -33,7 +33,7 @@ I keep any config and useful bash scripts that I need in a git repo. This includ
 
 So, lets step through what I needed to do this.
 
-First, (assuming you are a Linux, or possibly Mac/BSD user) I'll assume you are familiar with a terminal (e.g. [bash](TODO)).
+First, (assuming you are a Linux, or possibly Mac/BSD user) I'll assume you are familiar with a terminal (e.g. [bash](https://www.gnu.org/software/bash/)).
 
 ```bash
 cd ~/.config
@@ -70,7 +70,7 @@ git commit -m "Adding my zshrc"
 
 Now we need a bit of a trick to make it look (to our programs) like the dotfiles are still where we left them.
 
-Fortunately there's a great tool for this called ['soft links'](TODO). They make use of the structure of modern file systems to make a 'linked' version of a file or directory.
+Fortunately there's a great tool for this called ['soft (or symbolic) links'](https://en.wikipedia.org/wiki/Symbolic_link). They make use of the structure of modern file systems to make a 'linked' version of a file or directory.
 
 The utility to make soft links is called `ln` or `link` (find out more with `man ln`).
 ```bash

@@ -148,4 +148,4 @@ In fact, if we think a bit more about the type `Either a b` it makes sense that 
 
 TLDR: I had the arguments to `Either` around the wrong way and `Either err` acts as if it were a list of 0 or 1 elements.
 
-[Here's the code from above](/code/foldable_either.hs)
+[Here's the code from above](../code/foldable_either.hs)
