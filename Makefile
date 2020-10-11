@@ -1,5 +1,7 @@
 .PHONY: deploy
 
+all: deploy
+
 book: src book.toml
 	@echo "====> building"
 	mdbook build
