@@ -15,6 +15,7 @@ deploy: book
 	rm -rf /tmp/book
 	git worktree add /tmp/book gh-pages -f
 	cp -rp CNAME /tmp/book/
+	touch /tmp/book/.nojekyll
 	cd /tmp/book && \
 		git add -A && \
 		git commit -m "deployed on $(shell date) by ${USER}" && \
