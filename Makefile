@@ -1,4 +1,4 @@
-.PHONY: deploy
+.PHONY: deploy prepare
 
 all: deploy
 
@@ -10,7 +10,7 @@ book: src book.toml src/SUMMARY.md
 	@echo "====> building"
 	mdbook build
 
-deploy: book
+prepare: book
 	@echo "====> deploying to github"
 	rm -rf /tmp/book/
 	mkdir /tmp/book/
@@ -18,6 +18,9 @@ deploy: book
 	cp -rp book/html/* /tmp/book/
 	cp -rp CNAME /tmp/book/
 	touch /tmp/book/.nojekyll
+
+deploy: prepare
+	@echo "====> deploying to github"
 	cd /tmp/book && \
 		git add -A && \
 		git commit -m "deployed on $(shell date) by ${USER}" && \
