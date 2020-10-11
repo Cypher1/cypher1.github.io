@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Git backed Configuration - na</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="../posts/2018-07-03-writing-a-tiny-js-game.html"><strong aria-hidden="true">4.</strong> Writing a tiny JS game</a></li><li class="chapter-item expanded "><a href="../posts/2018-08-14-drafting-made-easy-with-python.html"><strong aria-hidden="true">5.</strong> Drafting made easy with Python</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">6.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">7.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="../posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">8.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html" class="active"><strong aria-hidden="true">9.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="../contact.html"><strong aria-hidden="true">10.</strong> Contact</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">na</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+published: true
+title: Git backed Configuration
+category: [Dotfiles, Config, Git]
+excerpt: |
+  What amazing tool could solve my configuration backup problem?
+
+  Well, of course, its Git.
+feature_text: |
+  **a man’s home <s>directory</s> is his castle**
+feature_image: "/assets/imgs/koz3.JPG"
+image: "/assets/imgs/koz3.JPG"
+-->
+<p>I've been using Linux for a little while and along the way have accumulated a fair bit of configuration (even though I try to remove the bits I don't need anymore).</p>
+<p>I often find that these configs help me out (e.g. <a href="../posts/2018-10-01-init.vim-(the-best-bits).html">my Vim config</a>) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.</p>
+<p>What amazing tool could solve my configuration backup problem?</p>
+<p>Well, of course, its <a href="https://en.wikipedia.org/wiki/Git">Git</a>.</p>
+<p>I keep any config and useful bash scripts that I need in a git repo. This includes:</p>
+<ul>
+<li><a href="http://vim.wikia.com/wiki/Example_vimrc">Vim config</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/zsh#Sample_.zshrc_files">Zsh config</a></li>
+<li><a href="https://git-scm.com/docs/git-config">Git config</a></li>
+<li><a href="https://i3wm.org/docs/userguide.html">i3 config</a></li>
+<li><a href="https://github.com/powerline/fonts/tree/master/Hack">a font I like</a></li>
+<li>a script for setting up my favourite keyboard config</li>
+<li>a list of <a href="https://pypi.org/">Python</a> and <a href="https://www.npmjs.com">NPM</a> packages I commonly use</li>
+<li>a list of programs that I commonly use</li>
+<li>a script that installs all the above</li>
+</ul>
+<p>So, lets step through what I needed to do this.</p>
+<p>First, (assuming you are a Linux, or possibly Mac/BSD user) I'll assume you are familiar with a terminal (e.g. <a href="https://www.gnu.org/software/bash/">bash</a>).</p>
+<pre><code class="language-bash">cd ~/.config
+</code></pre>
+<p>We're now in one of the most common places to store user specific configuration.
+Lets setup a git repo. I recommend using <a href="https://github.com">Github</a> or <a href="https://bitbucket.org">Bitbucket</a>.</p>
+<p>This should give you an identifier for your git repo, mine is <code>git@github.com:Cypher1/Castle.git</code>.</p>
+<pre><code class="language-bash">git init
+git remote add origin git@github.com:user/repo.git
+</code></pre>
+<p>Now you can add any files that you already have in <code>.config</code>.</p>
+<pre><code class="language-bash">git add important_file_to_backup
+git commit -m &quot;Adding important file&quot;
+</code></pre>
+<p>Nice enough, but we are missing our actual dotfiles (the ones stored in our home directory).</p>
+<p>So, lets grab those, I'll use my <code>zshrc</code> file as an example but you should be able to substitute to make this work for any dotfile.</p>
+<p>First we move the actual dot file into our repo and add it.</p>
+<pre><code class="language-bash">mv ~/.zshrc ~/.config/zshrc
+cd ~/.config/
+git add zshrc
+git commit -m &quot;Adding my zshrc&quot;
+</code></pre>
+<p>Now we need a bit of a trick to make it look (to our programs) like the dotfiles are still where we left them.</p>
+<p>Fortunately there's a great tool for this called <a href="https://en.wikipedia.org/wiki/Symbolic_link">'soft (or symbolic) links'</a>. They make use of the structure of modern file systems to make a 'linked' version of a file or directory.</p>
+<p>The utility to make soft links is called <code>ln</code> or <code>link</code> (find out more with <code>man ln</code>).</p>
+<pre><code class="language-bash">ln -s ~/.config/zshrc ~/.zshrc
+</code></pre>
+<p>This creates a new soft link at <code>~/.zshrc</code> and connects it to <code>~/.config/zshrc</code>.</p>
+<p>Now programs that open <code>~/.zshrc</code> will actually be opening <code>~/.config/zshrc</code>, so all your edits will be tracked in the git repo.</p>
+<p>Always remember to upload your changes to your remote repo so that you have them backed up.</p>
+<pre><code class="language-bash">git push origin master
+</code></pre>
+<p>I recommend learning more about <code>git</code> so that you can manage your backups and your changes to them.</p>
+<p>For me, it was worth creating an installer script that does all my soft linking, and software installation.</p>
+<p>You can find it <a href="https://github.com/Cypher1/Castle/blob/master/bin/arrive">here</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../posts/2018-11-01-the-curious-case-of-foldable-either.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../contact.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../posts/2018-11-01-the-curious-case-of-foldable-either.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../contact.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
