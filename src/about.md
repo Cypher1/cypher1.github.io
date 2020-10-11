@@ -10,7 +10,7 @@ I have a particular interest in 'safe' languages, machine learning, and logic en
 
 ---
 
-[![A mountain view](./imgs/koz2.JPG)](./imgs/koz2.JPG)
+[![A view of Mount Kosciuszko](./imgs/koz2.JPG)](./imgs/koz2.JPG)
 
 <div class="center" style="font-size: smaller"> Kosciuszko National Park</div>
 
