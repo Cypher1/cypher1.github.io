@@ -8,7 +8,7 @@ book: src book.toml
 
 deploy: book
 	@echo "====> deploying to github"
-	rm -rf /tmp/book/* || true
+	rm -rf /tmp/book
 	git worktree add /tmp/book gh-pages -f
 	cp -rp CNAME /tmp/book/
 	cd /tmp/book && \
