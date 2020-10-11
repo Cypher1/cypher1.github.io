@@ -7,10 +7,9 @@ book: src book.toml
 	mdbook build
 
 deploy: book
-	rm -rf /tmp/book || true
 	@echo "====> deploying to github"
-	git worktree add /tmp/book gh-pages
-	cp -rp book/* /tmp/book/
+	rm -rf /tmp/book/* || true
+	git worktree add /tmp/book gh-pages -f
 	cp -rp CNAME /tmp/book/
 	cd /tmp/book && \
 		git add -A && \
