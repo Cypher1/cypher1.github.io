@@ -8,6 +8,8 @@ FILE="src/SUMMARY.md"
 
 echo "#Posts" > $FILE
 out ""
+
+out "- [About](about.md)"
 for file in $(ls src/posts/*.md)
 do
   title=$(grep "title:" $file | sed "s/^title: //")

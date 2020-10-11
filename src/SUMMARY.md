@@ -1,5 +1,6 @@
 #Posts
 
+- [About](about.md)
 - [Setting up a Blog with Git](posts/2018-06-07-setting-up-a-blog.md)
 - [Strategies for returning references in Rust](posts/2018-07-02-strategies-for-returning-references-in-Rust.md)
 - [Writing a tiny JS game](posts/2018-07-03-writing-a-tiny-js-game.md)
