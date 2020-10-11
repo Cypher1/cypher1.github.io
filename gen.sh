@@ -14,3 +14,5 @@ do
   file=$(echo "$file" | sed "s/^src\///")
   out "- [$title]($file)"
 done
+
+out "- [Contact](contact.md)"
