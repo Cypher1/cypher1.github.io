@@ -4,7 +4,7 @@ all: deploy
 
 src/SUMMARY.md: src/posts/*.md
 	@echo "====> updating SUMMARY.md"
-	./gen.sh
+	bash ./gen.sh
 
 book: src book.toml src/SUMMARY.md
 	@echo "====> building"
@@ -12,17 +12,18 @@ book: src book.toml src/SUMMARY.md
 
 prepare: book
 	@echo "====> deploying to github"
-	rm -rf /tmp/book/
-	mkdir /tmp/book/
-	git worktree add /tmp/book gh-pages -f
-	rm -rf /tmp/book/*
-	cp -rp book/html/* /tmp/book/
-	cp -rp CNAME /tmp/book/
-	touch /tmp/book/.nojekyll
+	BOOK=".book" &&\
+		rm -rf $$BOOK &&\
+		mkdir $$BOOK &&\
+		git worktree add $$BOOK gh-pages -f &&\
+		rm -rf $$BOOK/* &&\
+		cp -rp book/html/* $$BOOK/ &&\
+		cp -rp CNAME $$BOOK/ &&\
+		touch $$BOOK/.nojekyll
 
 deploy: prepare
 	@echo "====> deploying to github"
-	cd /tmp/book && \
+	cd $BOOK && \
 		git add -A && \
 		git commit -m "deployed on $(shell date) by ${USER}" && \
 		git push origin gh-pages
