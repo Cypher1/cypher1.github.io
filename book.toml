@@ -19,6 +19,7 @@ mathjax-support = true
 editable = true
 
 [output.linkcheck]
+optional = true
 follow-web-links = false
 warning-policy = "warn"
 exclude = [ '/?search=', 'mailto:', 'google\.com', 'linkedin\.com', 'bryce\.fisher-fleig\.org' ]
