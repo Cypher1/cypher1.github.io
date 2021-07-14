@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="posts/2020-10-16-the-joys-of-rust-daemons.html"><strong aria-hidden="true">8.</strong> The joys of Rust: Daemons</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">9.</strong> Contact</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">8.</strong> Contact</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -562,23 +562,6 @@ git commit -m &quot;Adding my zshrc&quot;
 <p>I recommend learning more about <code>git</code> so that you can manage your backups and your changes to them.</p>
 <p>For me, it was worth creating an installer script that does all my soft linking, and software installation.</p>
 <p>You can find it <a href="https://github.com/Cypher1/Castle/blob/master/bin/arrive">here</a>.</p>
-<!--
-title: The joys of Rust: Daemons
--->
-<h1><a class="header" href="#motivation" id="motivation">Motivation</a></h1>
-<p>Want to skip to the Rust code? <a href="posts/2020-10-16-the-joys-of-rust-daemons.html#a-handy-crate">Feel free</a></p>
-<p>In the programming world, we normally write a program to get some kind of result, either a side effect (e.g. creating a file, sending an email, starting a server etc.) or some output into our command line (e.g. a calculator, terminal commands like <code>ls</code>). This generally means that we want to run the command in a sequence. We don't want our second command to start before the first has finished.</p>
-<pre><code class="language-bash">mkdir project  # We want to make the directory
-cd project # Then we try to use it
-</code></pre>
-<p>Other times however, we want a side effect and we don't need the result, we just want it to happen independently of our next task, and most languages have some functionality for this. Its called <code>async</code> is JavaScript, there are threads in many languages.</p>
-<pre><code class="language-bash"># We want the server to run in the background,
-# while we do the next task
-python -m http.server &amp;
-xdg-open &quot;http://localhost:8000&quot;
-</code></pre>
-<h1><a class="header" href="#a-handy-crate" id="a-handy-crate">A handy crate</a></h1>
-<p>Here we are</p>
 <h1><a class="header" href="#contact" id="contact">Contact</a></h1>
 <p>Feel free to write me an email <a href="mailto:joshua.pratt@bigpond.com">here</a> if you need a hand, have an idea you want to discuss or find a post I can improve on.</p>
 <img class="center circle-image" width="20%" src="./imgs/avatar.png"/>
