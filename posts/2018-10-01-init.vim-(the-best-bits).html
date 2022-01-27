@@ -4,14 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>init.vim - Types and Terror</title>
-        
-        
 
 
         <!-- Custom HTML head -->
         
-
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,9 +21,7 @@
 
         <!-- Fonts -->
         <script src="https://kit.fontawesome.com/c85306ca98.js" crossorigin="anonymous"></script>
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -35,12 +29,9 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
         <!-- MathJax -->
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -99,8 +90,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -116,11 +106,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Types and Terror</h1>
@@ -129,11 +117,9 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
@@ -144,7 +130,6 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
@@ -171,9 +156,9 @@ image: "/assets/imgs/koz2.JPG"
 <p>I wanted to make a first post about how to set up Jekyll, but it turns out that doing that without talking about Git is hard... and I am not yet ready to blog about git.</p>
 <p>So, I hope that the following is useful.</p>
 <p>I started using vim in Uni, having previously been happy with IDEs specialised to different (fairly specific) use cases and had avoided (and frankly, not even heard of) the popular 'hackers editors': emacs, vim and gedit (I'm almost kidding, but I do actually like Gedit). I'm so glad that I invested some time into learning vim as I think it's saved me a lot more, and also feels nicer to use that the other editors that I have experience with.</p>
-<h1><a class="header" href="#plugin-managers" id="plugin-managers">Plugin managers</a></h1>
+<h1 id="plugin-managers"><a class="header" href="#plugin-managers">Plugin managers</a></h1>
 <p>First up, I find that having a plugin manager saves a tonne of time. Between <a href="https://github.com/junegunn/vim-plug">Plug</a>, <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>, <a href="https://github.com/tpope/vim-pathogen">Pathogen</a> and <a href="https://github.com/Shougo/dein.vim">dein</a> there's a lot of very good options, but personally I recommend Plug. I think it's the simplest and love that it runs asynchronously.</p>
-<h1><a class="header" href="#colours--colors" id="colours--colors">Colours || Colors</a></h1>
+<h1 id="colours--colors"><a class="header" href="#colours--colors">Colours || Colors</a></h1>
 <p>I find colour helps me to identify when I've messed up some syntax, misspelled a keyword or otherwise made a mistake.</p>
 <p>For colour schemes I have to recommend <a href="https://github.com/sjl/badwolf">badwolf</a> which plays nicely with all my syntax highlighting plugins and <a href="https://neovim.io/">Nvim</a> a Vim fork that I really like. Here's how to install it:</p>
 <pre><code class="language-vim">Plugin
@@ -189,32 +174,32 @@ colorscheme badwolf
 set background=dark
 </code></pre>
 <p>This will turn on syntax highlighting and use a dark background (which I think has been minimizing the degradation of my eyesight).</p>
-<h1><a class="header" href="#vim-tweaks" id="vim-tweaks">Vim Tweaks</a></h1>
+<h1 id="vim-tweaks"><a class="header" href="#vim-tweaks">Vim Tweaks</a></h1>
 <p>Have you ever edited a file, closed vim and then realised that the last thing you did wasn't so perfect, only to be unable to undo it easily?
 <a href="https://en.wikipedia.org/wiki/Version_control">Version control</a> helps, but isn't fine grained enough for my liking.</p>
 <p>Fortunately, vim has a solution.</p>
 <pre><code class="language-vim">set undofile undodir=~/.config/nvim/undo-dir
 </code></pre>
 <p><code>undofile</code> is the option to tell vim to store the edit history of the files you're working on. This means that when you start vim again, it'll load up all the recent changes you've made and let you undo them. This can be a super power when you add simnalamburt's <a href="https://github.com/simnalamburt/vim-mundo">Vim-mundo</a>, a tool for showing your edit history as a tree, which makes it a lot easier to find a previous state of a file. The <code>undodir</code> is the file that it stores the history in, which you can put anywhere but I keep in my nvim config directory.</p>
-<h1><a class="header" href="#write-as-sudo" id="write-as-sudo">Write as sudo</a></h1>
+<h1 id="write-as-sudo"><a class="header" href="#write-as-sudo">Write as sudo</a></h1>
 <p>Sometimes I edit a file only to discover that it's read only. I could quit, reopen the file with <code>visudo</code> or <code>sudoedit</code> but this is easier. p.s. <a href="https://unix.stackexchange.com/questions/181492/why-is-it-risky-to-give-sudo-vim-access-to-ordinary-users/181494">You should probably be careful with <code>sudo vim</code></a>.</p>
 <pre><code class="language-vim">cmap w!! w !sudo tee &gt; /dev/null %
 </code></pre>
 <p>This maps <code>:w!!</code> to write via a program called tee which lets you more safely write to files as root.</p>
 <p>I believe this tip may have been from <a href="https://dev.to/jovica/the-vim-trick-which-will-save-your-time-and-nerves-45pg">this post</a> by jovica but honestly I have no idea if this is where I found out about it.</p>
-<h1><a class="header" href="#some-plugins" id="some-plugins">Some plugins</a></h1>
-<h4><a class="header" href="#tmhedbergs-a-hrefhttpsgithubcomtmhedbergmatchitmatchita" id="tmhedbergs-a-hrefhttpsgithubcomtmhedbergmatchitmatchita">tmhedberg's <a href="https://github.com/tmhedberg/matchit">Matchit</a></a></h4>
+<h1 id="some-plugins"><a class="header" href="#some-plugins">Some plugins</a></h1>
+<h4 id="tmhedbergs-matchit"><a class="header" href="#tmhedbergs-matchit">tmhedberg's <a href="https://github.com/tmhedberg/matchit">Matchit</a></a></h4>
 <p>This improves vim 'find next matching bracket' functionality (by default mapped to '%'). Normally, it can match brackets in C like languages but the plugin expands it to be able to find matching tags in more complex formats like html and vim.</p>
-<h4><a class="header" href="#tpopes-a-hrefhttpsgithubcomtpopevim-eunuchvim-enucha" id="tpopes-a-hrefhttpsgithubcomtpopevim-eunuchvim-enucha">tpope's <a href="https://github.com/tpope/vim-eunuch">vim-enuch</a></a></h4>
+<h4 id="tpopes-vim-enuch"><a class="header" href="#tpopes-vim-enuch">tpope's <a href="https://github.com/tpope/vim-eunuch">vim-enuch</a></a></h4>
 <p>This adds a bunch of great commands to do 'unixy' things like moving, renaming and deleting files. Seriously it's amazing and includes some nice file search tools. Tpope has a bunch of <a href="https://github.com/tpope/">other great plugins too</a> and is the maintainer of <a href="https://github.com/tpope/vim-pathogen">pathogen</a>. He even wrote a <a href="https://github.com/tpope/vim-scriptease">plugin for writing plugins... </a>.</p>
-<h4><a class="header" href="#roxmas-a-hrefhttpsgithubcomroxmavim-window-resize-easyvim-window-resize-easya" id="roxmas-a-hrefhttpsgithubcomroxmavim-window-resize-easyvim-window-resize-easya">roxma's <a href="https://github.com/roxma/vim-window-resize-easy">vim-window-resize-easy</a></a></h4>
+<h4 id="roxmas-vim-window-resize-easy"><a class="header" href="#roxmas-vim-window-resize-easy">roxma's <a href="https://github.com/roxma/vim-window-resize-easy">vim-window-resize-easy</a></a></h4>
 <p>Beautiful in it's relative simplicity, this makes vim splits easy to manage without resorting to dragging their edges around.</p>
-<h4><a class="header" href="#junegunns-a-hrefhttpsgithubcomjunegunnfzffzfa" id="junegunns-a-hrefhttpsgithubcomjunegunnfzffzfa">junegunn's <a href="https://github.com/junegunn/fzf">fzf</a></a></h4>
+<h4 id="junegunns-fzf"><a class="header" href="#junegunns-fzf">junegunn's <a href="https://github.com/junegunn/fzf">fzf</a></a></h4>
 <p>Fzf is amazing. It is a fuzzy finder that makes finding files in large projects or just on your computer much easier. I highly recommend you install it for your terminal, editor and really anything you can get to support it. <a href="https://github.com/junegunn/fzf#installation">Installation</a> was actually a little finicky for me but here's the vim config needed for Plug.</p>
 <pre><code class="language-vim">Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 </code></pre>
-<h4><a class="header" href="#andrewradevs-a-hrefhttpsgithubcomandrewradevswitchvimswitcha" id="andrewradevs-a-hrefhttpsgithubcomandrewradevswitchvimswitcha">AndrewRadev's <a href="https://github.com/AndrewRadev/switch.vim">switch</a></a></h4>
+<h4 id="andrewradevs-switch"><a class="header" href="#andrewradevs-switch">AndrewRadev's <a href="https://github.com/AndrewRadev/switch.vim">switch</a></a></h4>
 <p>Provides <code>:Switch</code> which lets you switch statements like 'true' to 'false'. It supports a bunch more common replacements which will save you rewriting things (and more importantly, typos) and is even configurable. Here's my config for it.</p>
 <pre><code class="language-vim">Plug 'AndrewRadev/switch.vim'
 
@@ -231,7 +216,7 @@ let g:switch_custom_definitions =
 
 nnoremap &lt;leader&gt;! :Switch&lt;CR&gt;
 </code></pre>
-<h1><a class="header" href="#a-final-tip-line-shoving" id="a-final-tip-line-shoving">A final tip: Line 'shoving'</a></h1>
+<h1 id="a-final-tip-line-shoving"><a class="header" href="#a-final-tip-line-shoving">A final tip: Line 'shoving'</a></h1>
 <pre><code class="language-vim">&quot;Shove down: &lt;A-j&gt;
 nnoremap ∆ :m.+1&lt;CR&gt;==
 nnoremap &lt;A-j&gt; :m .+1&lt;CR&gt;==
@@ -253,17 +238,13 @@ The ∆ and ˚ are there because my Mac keyboard uses alt for inputting special 
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
 
-                        
                             <a rel="next" href="../posts/2018-10-05-lost-13kb-of-js.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -271,55 +252,40 @@ The ∆ and ˚ are there because my Mac keyboard uses alt for inputting special 
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
 
-                
                     <a rel="next" href="../posts/2018-10-05-lost-13kb-of-js.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
 
-        
         <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
         <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
         <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
         <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
-        
 
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
 
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
     </body>
 </html>
