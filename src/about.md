@@ -1,6 +1,6 @@
 # About
 
-Hi, I'm Josh (they/them).
+Hi, I'm J.
 
 In 2018 I started working full time as a software developer. This gave me some time to think about how I might try to give back to the software development community.
 
