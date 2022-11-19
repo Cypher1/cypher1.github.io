@@ -1,6 +1,6 @@
 # Contact
 
-Feel free to write me an email [here](mailto:joshua.pratt@bigpond.com) if you need a hand, have an idea you want to discuss or find a post I can improve on.
+Feel free to write me an email [here](mailto:jp10010101010000@gmail.com) if you need a hand, have an idea you want to discuss or find a post I can improve on.
 
 <img class="center circle-image" width="20%" src="./imgs/avatar.png"/>
 
@@ -10,7 +10,7 @@ Feel free to write me an email [here](mailto:joshua.pratt@bigpond.com) if you ne
       <a href="https://twitter.com/AltReptile" class="center"><i class="fab fa-twitter"></i></a>
     </div>
     <div class="col">
-      <a href="https://www.linkedin.com/in/joshuarpratt" class="center"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.linkedin.com/in/prattjr" class="center"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="col">
       <a href="https://github.com/Cypher1" class="center"><i class="fab fa-github"></i></a>
