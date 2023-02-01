@@ -7,6 +7,15 @@
     <meta name="Description" content="Résumé - Jay Pratt">
     <base href="/">
     <link rel="stylesheet" href="/bulma.css">
+    <style>
+.section {
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+.subtitle {
+  padding-bottom: 0.1em !important;
+}
+    </style>
     <body>
       <div class="container">
         <section class="section">
@@ -16,14 +25,27 @@
                 Jay Pratt
               </h2>
               <p>5 years at Google.</p>
-              <p>Internships at Facebook (now Meta) and Microsoft.</p>
-              <p>Undergraduate at UNSW. Majored in Computer Science and Artificial Intelligence.</p>
+              <p>Internships at Facebook and Microsoft.</p>
+              <p>Undergrad at UNSW: Computer Science and AI/ML.</p>
               <p>&nbsp;</p>
-              <p>Languages:</p>
-              <p><b>Rust</b>, C++, TypeScript, C++, Kotlin, JavaScript, PHP (Hack), Python, Haskell, Bash.</p>
-              <p>&nbsp;</p>
-              <p>I am passionate about improving the lives of the people around me and using technology to automate and accelerate tasks.
-                I have a range of experience across languages and product areas but my particular interest is using Static Analysis and AI techniques to build better systems.
+              <p>
+                <b>Rust</b>,
+                C++,
+                TypeScript,
+                <a href="https://github.com/Cypher1/13k_lost">JavaScript</a>,
+                Datalog,
+                Python,
+                <b>Haskell</b>,
+                Kotlin, Java,
+                <a href="https://github.com/Cypher1/HackSlashBash">Bash</a>,
+                PHP (Hack),
+                <a href="https://github.com/Cypher1/wasm-shared-buffers">WASM</a>,
+                <a href="https://github.com/Cypher1/tako/tree/cpp">Meson & Ninja</a>,
+                <a href="https://github.com/Cypher1/nvim_i3focus">Vim</a>,
+                <a href="https://github.com/Cypher1/Castle">Zsh</a>,
+                <b><a href="https://github.com/Cypher1/tako/blob/main/.github/workflows/takolib.yml">Github</a></b>,
+                <b><a href="https://github.com/Cypher1/py3status">Linux</a></b>.
+              </p>
             </div>
 
             <div class="column is-narrow" style="text-align: right;">
@@ -77,11 +99,17 @@
               </div>
             </div>
           </div>
+          <div>
+              <p>I am passionate about improving the lives of the people around me and using technology to automate and accelerate tasks.
+                I have a range of experience but my particular interest is using Static Analysis and AI techniques to build better systems.
+          </div>
         </section>
+
+
         <section class="section">
-          <h3 class="subtitle is-3">
+          <h4 class="subtitle is-4">
             Experience
-          </h3>
+          </h4>
           <div class="block">
             <div class="columns">
               <div class="column is-1">
@@ -101,9 +129,42 @@
               </div>
             </div>
             <div>
-              <p>I've had some great opportunities in the last few years working in Privacy and Security for Google. My team uses a wide range of tools and techniques from C++ and Formal methods, to Kotlin and implementing Database primitives for Android.
-
-                I spent some time on the Chrome Operating System team as part of the Guest OS and Virtual Machine efforts. We took Linux on Chrome OS from a proof of concept to a successful product that helps sell Chrome books.</p>
+              <p>I've had some great opportunities in the last few years working at Google. My team uses a wide range of tools and techniques from formal methods to implementing databases for Android.
+                I also spent some time with the Chrome Operating System team as part of their virtual machine efforts. We took Linux VMs on Chrome OS from a PoC to a successful launch.</p>
+            </div>
+            <p>&nbsp;</p>
+            <div class="block">
+              <h5 class="subtitle is-5">
+                <strong>Projects</strong>
+              </h5>
+              <div class="columns">
+                <div class="column content">
+                  <b><a href="https://github.com/Cypher1/raksha">Raksha</a>: static analysis for policy enforcement.</b>
+                  <ul class="ul">
+                    <li>Working with client teams on IR generation</li>
+                    <li>Implementing new theories for data flow analysis (enforcing non-fingerprinting)</li>
+                    <li>Building infrastructure for custom model checking solver</li>
+                  </ul>
+                </div>
+                <div class="column content">
+                  <b>Arcs: Language Design and Tooling</b>
+                  <ul>
+                    <li>Leadership of syntax design and major refactor</li>
+                    <li>Refinement type system</li>
+                    <li>Ongoing maintenance (3yrs) and usability work</li>
+                    <li>Language server (VSCode integration)</li>
+                    <li><a href="https://github.com/Cypher1/wasm-shared-buffers">Implementing shared memory in WASM</a></li>
+                  </ul>
+                </div>
+                <div class="column content">
+                  <b>Chrome OS: Linux VMs</b>
+                  <ul>
+                    <li>Chrome OS User Interface theme work, including refactoring and maintaining <a href="https://chromium.googlesource.com/chromiumos/third_party/cros-adapta/">48K LoC of CSS</a> and multiple build tools</li>
+                    <li>Patching a <a href="https://github.com/Cypher1/vector-icons">Chrome extension</a> for rendering a Chrome specific image format used for toolbars</li>
+                    <li>Implementation work on USB device pass through</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <div class="block">
@@ -125,9 +186,9 @@
               </div>
             </div>
             <div>
-              <p>I had a great experience working on automatic spam detection with the Anti-Spam team at Facebook.
-                I learnt a lot about processing Big Data, scalable Machine Learning techniques and spam.
-                I'd love to recommend Interning with Facebook, working with Sagar Patel was lovely and the rest of the team was very helpful and inviting.</p>
+              <p>I had a great experience working on automatic spam detection with the (anti)spam team at Facebook.
+                I learnt a lot about processing 'Big Data', scalable machine learning techniques and spam.
+                I'd love to recommend interning with Facebook.</p>
             </div>
           </div>
           <div class="block">
@@ -168,12 +229,12 @@
                 UNSW
               </div>
               <div class="column is-6">
-                <p>Jul 2015 – Dec 2017 &amp; Jul 2017 – Jan 2018</p>
-                <p>(3 years 1 month)</p>
+                <p>2015 - 2018</p>
+                <p>(3 years)</p>
               </div>
             </div>
             <div>
-              <p>I tutored First Year Computer Science covering Data Structures, Algorithms and Programming and Debugging Techniques and later tutored two classes in the Advanced C++ course covering the language features and benefits of C++, particularly the usage of the standard library.</p>
+              <p>I tutored courses in Data Structures, Algorithms, Programming and Debugging Techniques and later tutored the Advanced C++ course.</p>
             </div>
           </div>
           <div class="block">
@@ -195,8 +256,7 @@
               </div>
             </div>
             <div>
-              <p>Developed a Web Interface for Customer Resource Management using AngularJS, Bootstrap, Sass and other tools as part of a small developer team of three.
-                I produced a complete and dynamic navigation system which reduced page load time in comparison to regular static Web Sites. This allowed for many pages to be loaded without having to reload the whole page, styling and images.</p>
+              <p>Developed a Web Interface for Customer Resource Management using AngularJS, Bootstrap, Sass and other tools as part of a small developer team of three.</p>
             </div>
           </div>
           <div class="block">
@@ -223,9 +283,9 @@
           </div>
         </section>
         <section class="section">
-          <h3 class="subtitle is-3">
+          <h4 class="subtitle is-4">
             Education
-          </h3>
+          </h4>
           <div class="block">
             <div class="columns">
               <div class="column is-1">
@@ -233,8 +293,7 @@
               </div>
               <div class="column is-4">
                 <strong>
-                  <p>Bachelor of Science (Computer Science),</p>
-                  <p>Artificial Intelligence</p>
+                  <p>BSci (Computer Science &amp; AI)</p>
                 </strong>
               </div>
               <div class="column is-3">
@@ -252,18 +311,23 @@
           </div>
         </section>
         <section class="section">
-          <h3 class="subtitle is-3">
+          <h5 class="subtitle is-5">
             Interests
-          </h3>
+          </h5>
           <div class="columns is-multiline is-centered">
-            <div class="column is-narrow"> Artificial&nbsp;Intelligence </div>
-            <div class="column is-narrow"> Machine&nbsp;Learning </div>
-            <div class="column is-narrow"> Type&nbsp;Systems </div>
-            <div class="column is-narrow"> Programming&nbsp;languages </div>
-            <div class="column is-narrow"> Formal&nbsp;Methods </div>
-            <div class="column is-narrow"> Systems&nbsp;Programming </div>
             <div class="column is-narrow"> Archery </div>
-            <div class="column is-narrow"> Mechanical keyboards </div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/GamePlayer">Artificial&nbsp;Intelligence</a> </div>
+            <div class="column is-narrow"> Espresso </div>
+            <div class="column is-narrow"> <a href="https://github.com/fp-syd"> Functional&nbsp;Programming </div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/Coqtail">Formal&nbsp;Methods</a> </div>
+            <div class="column is-narrow"> Gardening </div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/bravia-auth-and-remote">IOT</a></div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/qmk_firmware">Mechanical&nbsp;keyboards</a></div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1?tab=repositories">Open&nbsp;source</a></div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/QueRyCode">Rust</a></div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/ika">Programming&nbsp;languages</a></div>
+            <div class="column is-narrow"> Sushi </div>
+            <div class="column is-narrow"> <a href="https://github.com/Cypher1/tyger">Type&nbsp;Systems</a></div>
           </div>
         </section>
       </div>
