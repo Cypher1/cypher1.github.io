@@ -26,5 +26,5 @@ deploy: prepare
 	@echo "====> deploying to github"
 	cd $(BOOK) && \
 		git add -A && \
-		git commit -m "deployed on $(shell date) by ${USER}" && \
+		git commit -m "deployed on $(shell date) by ${USER}" || true && \
 		git push origin gh-pages
