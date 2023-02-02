@@ -7,6 +7,9 @@ Feel free to write me an email [here](mailto:jp10010101010000@gmail.com) if you 
 <div class="footer">
   <div class="flex-grid" style="font-size: 5rem">
     <div class="col">
+      <a href="./resume.html" class="center"><img src="./imgs/file-solid.svg"></img></a>
+    </div>
+    <div class="col">
       <a href="https://twitter.com/AltReptile" class="center"><i class="fab fa-twitter"></i></a>
     </div>
     <div class="col">
