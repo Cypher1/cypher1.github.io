@@ -149,7 +149,7 @@
             <p>&nbsp;</p>
             <div class="block">
               <h5 class="subtitle is-5">
-                <strong>Projects</strong>
+                Projects
               </h5>
               <div class="columns">
                 <div class="column content">
@@ -161,13 +161,20 @@
                   </ul>
                 </div>
                 <div class="column content">
-                  <b>Arcs: Language Design and Tooling</b>
+                  <b><a href="https://github.com/PolymerLabs/arcs">Arcs</a>: a runtime for modular, provably private, AI powered software.</b>
                   <ul>
                     <li>Leadership of syntax design and major refactor</li>
-                    <li>Refinement type system</li>
+                    <li>Refinement type system (<a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/Arcs%20Refinement%20Types%20for%20Dynamic%20Queries.pdf">talk available</a>)</li>
                     <li>Ongoing maintenance (3yrs) and usability work</li>
                     <li>Language server (VSCode integration)</li>
                     <li><a href="https://github.com/Cypher1/wasm-shared-buffers">Implementing shared memory in WASM</a></li>
+                    <li>Gave talks on:
+                      <a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/Types%20for%20fun%20and%20profit.pdf">structural type systems</a>,
+                      <a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/Arcs%20Refinement%20Types%20for%20Dynamic%20Queries.pdf">refinement type systems</a>,
+                      <a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/ECS%20for%20Compilers_%20Reimagining%20the%20AST.pdf">optimising compilers (using rewrite systems)</a>, and
+                      <a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/Rust%20%2B%20WASM.pdf">WASM compilation</a>.
+                    </li>
+                    <li>Contributions to <a href="https://github.com/PolymerLabs/arcs/tree/master/docs/design">Arcs' design</a></li>
                   </ul>
                 </div>
                 <div class="column content">
@@ -176,6 +183,61 @@
                     <li>Chrome OS User Interface theme work, including refactoring and maintaining <a href="https://chromium.googlesource.com/chromiumos/third_party/cros-adapta/">48K LoC of CSS</a> and multiple build tools</li>
                     <li>Patching a <a href="https://github.com/Cypher1/vector-icons">Chrome extension</a> for rendering a Chrome specific image format used for toolbars</li>
                     <li>Implementation work on USB device pass through</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="columns">
+              <div class="column is-1">
+                <img src="./imgs/github.png" alt="Logo for Github" width="24" height="24">
+              </div>
+              <div class="column is-4">
+                <strong>
+                  Open source contributions
+                </strong>
+              </div>
+              <div class="column is-3">
+                Compilers &amp; Tooling
+              </div>
+              <div class="column is-6">
+                <p>Ongoing</p>
+              </div>
+            </div>
+            <div class="block">
+              <div class="columns">
+                <div class="column content">
+                  <img src="./imgs/tako.png" alt="Logo for Tako" width="24" height="24">
+                  <b><a href="https://github.com/Cypher1/tako">Tako</a>: an experiment in software verification</b>
+                  <ul class="ul">
+                    <li>Leverages type checking and proof for optimisation and correctness</li>
+                    <li>Prototypes have included:<ul>
+                        <li>compilation via C++, allowing integration with other tools</li>
+                        <li>a <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a> implementation</li>
+                        <li>a <a href="https://en.wikipedia.org/wiki/SKI_combinator_calculus">SKI calculus</a> implementation</li>
+                      </ul>
+                    </li>
+                    <li>Currently building:<ul>
+                        <li>a LLVM back-end</li>
+                        <li>a MLIR back-end</li>
+                        <li>a <a href="https://en.wikipedia.org/wiki/Dependent_type">dependant type</a> system based on the <a href="https://en.wikipedia.org/wiki/Calculus_of_constructions">CIC</a> and <a href="https://en.wikipedia.org/wiki/System_F">System-F</a></li>
+                  </ul>
+                </div>
+                <div class="column content">
+                  <b><a href="https://github.com/cypher1/steel">Steel</a>: a tiny optimising interpreter</b>
+                  <ul class="ul">
+                    <li>Applied concepts from Game Development (Entity Component Systems) to compilers</li>
+                    <li>Found ~30% runtime savings in benchmarks when applying simple static optimisations over naive <a href="https://en.wikipedia.org/wiki/Rewriting">rewriting</a> of <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">ASTs</a></li>
+                    <li>Presented findings to Google Research Australia (<a href="https://github.com/PolymerLabs/arcs/blob/master/docs/talks/ECS%20for%20Compilers_%20Reimagining%20the%20AST.pdf">talk available</a>)
+                  </ul>
+                </div>
+                <div class="column content">
+                  <b><a href="https://github.com/project-oak/arcsjs-provable/tree/main/ibis">Ibis</a>: a type system for privacy enforcement</b>
+                  <ul class="ul">
+                    <li>Uses data flow analysis to enforce requirements avoiding leakage of PII (user data)</li>
+                    <li>Used a type system with awareness of structure, sub-typing, and data flow tagging / 'taint' </li>
+                    <li>100% Rust, compiled to WASM for in-browser type &amp; policy checking</li>
                   </ul>
                 </div>
               </div>
@@ -199,7 +261,7 @@
               </div>
             </div>
             <div>
-              <p>I really enjoyed working on automatic spam detection with the antispam team at Facebook.
+              <p>I really enjoyed working on automatic spam detection with the anti-spam team at Facebook.
                 I learnt a lot about processing 'Big Data', scalable machine learning techniques and spam.
                 I'd love to recommend interning with Facebook.</p>
             </div>
