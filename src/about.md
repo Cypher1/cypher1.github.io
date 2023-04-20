@@ -1,6 +1,6 @@
 # About
 
-Hi, I'm J.
+Hi, I'm Jay.
 
 In 2018 I started working full time as a software developer. This gave me some time to think about how I might try to give back to the software development community.
 
