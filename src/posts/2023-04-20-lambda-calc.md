@@ -29,6 +29,6 @@ My favourite class of approaches is to build a small core language and build eve
 ## TODO: Finish
 
 ```rust
-println!("TODO: Add example");
+println!("TODO: Add example {:?}", 2*32);
 ```
 
