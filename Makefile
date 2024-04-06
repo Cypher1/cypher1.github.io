@@ -5,8 +5,7 @@ BOOK=".book"
 all: prepare
 
 serve: prepare
-	pkill http-server || true
-	http-server $(BOOK)
+	mdbook serve
 
 src/SUMMARY.md: src/posts/*.md
 	@echo "====> updating SUMMARY.md"
