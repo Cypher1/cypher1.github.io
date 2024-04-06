@@ -1,11 +1,11 @@
-.PHONY: deploy prepare
+.PHONY: deploy prepare serve
 
 BOOK=".book"
 
-all: deploy
+all: prepare
 
 serve: prepare
-	cd $(BOOK) && python -m http.server
+	http-server $(BOOK)
 
 src/SUMMARY.md: src/posts/*.md
 	@echo "====> updating SUMMARY.md"
@@ -16,7 +16,7 @@ book: src book.toml src/SUMMARY.md
 	mdbook build
 
 prepare: book
-	@echo "====> deploying to github"
+	@echo "====> preparing book"
 	rm -rf $(BOOK)
 	mkdir $(BOOK)
 	git worktree add $(BOOK) gh-pages -f

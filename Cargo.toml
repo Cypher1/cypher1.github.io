@@ -1,0 +1,9 @@
+[package]
+name = "cypher1-github-io"
+version = "0.0.0"
+repository = "https://github.com/cypher1/cypher1.github.io/"
+include = ["src/**/*", "theme/**/*", "LICENSE.md", "README.md"]
+
+[lib]
+name = "blog"
+path = "src/"
