@@ -17,6 +17,7 @@ default-theme = "dark"
 preferred-dark-theme = "navy"
 mathjax-support = true
 git-repository-url = 'https://github.com/Cypher1/cypher1.github.io'
+additional-css = ["src/base.css"]
 
 [output.html.playground]
 editable = true

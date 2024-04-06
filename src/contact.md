@@ -1,3 +1,5 @@
+<script src="https://kit.fontawesome.com/c85306ca98.js" crossorigin="anonymous"></script>
+
 # Contact
 
 Feel free to write me an email [here](mailto:jp10010101010000@gmail.com) if you need a hand, have an idea you want to discuss or find a post I can improve on.
@@ -10,9 +12,6 @@ Feel free to write me an email [here](mailto:jp10010101010000@gmail.com) if you 
 <div class="flex-grid" style="font-size: 5rem">
   <div class="col">
     <a href="./resume.html" class="center"><i class="fa-solid fa-file"></i></a>
-  </div>
-  <div class="col">
-    <a href="https://twitter.com/AltReptile" class="center"><i class="fab fa-twitter"></i></a>
   </div>
   <div class="col">
     <a href="https://www.linkedin.com/in/prattjr" class="center"><i class="fab fa-linkedin"></i></a>
