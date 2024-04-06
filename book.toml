@@ -15,11 +15,12 @@ create-missing = false
 [output.html]
 mathjax-support = true
 git-repository-url = 'https://github.com/Cypher1/cypher1.github.io'
-additional-js = ["src/fa.js"]
 
 [output.html.playground]
 editable = true
 runnable = true
+copy-js = true
+line-numbers = true
 
 [output.linkcheck]
 optional = true
