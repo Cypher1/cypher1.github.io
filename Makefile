@@ -22,6 +22,7 @@ prepare: book
 	git worktree add $(BOOK) gh-pages -f
 	rm -rf $(BOOK)/*
 	cp -rp book/html/* $(BOOK)/
+	rm -rf book
 	cp -rp CNAME $(BOOK)/
 	touch $(BOOK)/.nojekyll
 
