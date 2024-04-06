@@ -13,6 +13,8 @@ create-missing = false
 [preprocessor.links]
 
 [output.html]
+default-theme = "dark"
+preferred-dark-theme = "navy"
 mathjax-support = true
 git-repository-url = 'https://github.com/Cypher1/cypher1.github.io'
 
