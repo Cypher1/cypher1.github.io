@@ -4,6 +4,9 @@ BOOK=".book"
 
 all: deploy
 
+serve: prepare
+	cd $(BOOK) && python -m http.server
+
 src/SUMMARY.md: src/posts/*.md
 	@echo "====> updating SUMMARY.md"
 	bash ./gen.sh
