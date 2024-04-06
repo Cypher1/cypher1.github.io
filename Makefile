@@ -5,6 +5,7 @@ BOOK=".book"
 all: prepare
 
 serve: prepare
+	pkill http-server || true
 	http-server $(BOOK)
 
 src/SUMMARY.md: src/posts/*.md

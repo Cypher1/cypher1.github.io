@@ -17,6 +17,7 @@ mathjax-support = true
 
 [output.html.playground]
 editable = true
+runnable = true
 
 [output.linkcheck]
 optional = true
