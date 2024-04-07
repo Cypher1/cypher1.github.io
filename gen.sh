@@ -17,4 +17,5 @@ do
   out "- [$title]($file)"
 done
 
+out "- [Resume](resume.md)"
 out "- [Contact](contact.md)"
