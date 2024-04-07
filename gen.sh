@@ -2,7 +2,7 @@
 
 FILE="src/SUMMARY.md"
 
-  function out {
+function out {
   echo "$1" >> $FILE
 }
 
