@@ -9,6 +9,8 @@ authors = ["Jay Pratt"]
 build-dir = "book"
 create-missing = false
 
+[preprocessor.graphviz]
+output-to-file = true
 [preprocessor.index]
 [preprocessor.links]
 

@@ -5,7 +5,7 @@ BOOK=".book"
 all: prepare
 
 serve: prepare
-	mdbook serve
+	mdbook serve --open
 
 src/SUMMARY.md: src/posts/*.md
 	@echo "====> updating SUMMARY.md"

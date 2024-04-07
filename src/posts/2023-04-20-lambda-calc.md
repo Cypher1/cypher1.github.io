@@ -24,6 +24,20 @@ Many approaches have been taken to building programming languages and compilers,
 
 ## A small family tree of programming language models
 
+<div class="center">
+
+```dot process Test Graph
+digraph {
+    "processed" -> "graph"
+}
+```
+
+</div>
+
+
+
+## My favourite approach: Lambda Calculus
+
 My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.
 
 ## TODO: Finish
