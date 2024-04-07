@@ -109,16 +109,17 @@ digraph {
     Fsharp [label="F#"]
     Cpp [label="C++"]
     Csharp [label="C#"]
-    dotNET [label=".NET"]
+    dotNET [label=".NET (MSIL/CIL)"]
 
-    JIT -> Runtime
-    JVM -> JIT
-    dotNET -> Runtime
-    dotNET -> JIT
+    # JITs
+    "Browser IR" -> Runtime
+    JVM -> Runtime
+    dotNET -> Runtime [label="CLR"]
+    dotNET -> MC [label="coreRT"]
+    LLVMIR -> Runtime [label="llvm jit"]
+    LLVMIR -> MC [label="llvm"]
+    LLVMIR -> WASM [label="llvm"]
     MC -> Runtime
-    LLVMIR -> Runtime [label="llvm"]
-    Browser -> Runtime [label="v8 and co"]
-    Interpreted -> Runtime
 
     Java -> JVM [label="javac"]
     Kotlin -> JVM [label="kotlinc"]
@@ -129,33 +130,30 @@ digraph {
 
     C -> MC [label="gcc"]
     Cpp -> MC [label="g++"]
-    Go -> MC [label="golang"]
-    Fortran -> MC
+    Go -> MC [label="goc"]
+    Fortran -> MC [label="gfortran\nifort\npgf77"]
     Kotlin -> LLVMIR [label="kotlinc"]
     C -> Zig [label="zig"]
     Zig -> MC [label="zig"]
+    Zig -> LLVMIR [label="zig"]
     Cpp -> LLVMIR [label="clang"]
     Rust -> LLVMIR [label="rustc"]
-    LLVMIR -> MC [label="llvm"]
-    LLVMIR -> WASM [label="llvm"]
     Haskell -> STG -> Cmm [label="ghc"]
     Cmm -> MC [label="ghc"]
     Cmm -> LLVMIR [label="ghc"]
     Cmm -> C [label="ghc"]
-    JavaScript -> Browser [label="v8 and co"]
-    Browser -> JIT [label="v8 and co"]
+    JavaScript -> "Browser IR" [label="v8 and co"]
+    JavaScript -> C [label="shermes"]
     TypeScript -> JavaScript [label="tsc"]
     Kotlin -> JavaScript [label="kotlinc"]
-    WASM -> Browser
-    Lisp -> Interpreted
-    sh -> Interpreted
-    zsh -> Interpreted
-    fsh -> Interpreted
-    bash -> Interpreted
-    perl -> Interpreted
-    Python -> JIT [label="cpython"]
-    Meson -> Interpreted
-    Starlark -> Interpreted
+    WASM -> "Browser IR" [label="v8 and co"]
+    Lisp -> Runtime [label="lisp"]
+    sh -> Runtime [label="sh"]
+    zsh -> Runtime [label="zsh"]
+    fsh -> Runtime [label="fsh"]
+    bash -> Runtime [label="bash"]
+    perl -> Runtime [label="perl"]
+    Python -> Runtime [label="cpython"]
 }
 ```
 
