@@ -14,7 +14,7 @@ image: "/assets/imgs/koz3.JPG"
 
 I've been using Linux for a little while and along the way have accumulated a fair bit of configuration (even though I try to remove the bits I don't need anymore).
 
-I often find that these configs help me out (e.g. [my Vim config](../posts/2018-10-01-init.vim-(the-best-bits).md)) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.
+I often find that these configs help me out (e.g. [my Vim config](/posts/2018-10-01-init.vim-(the-best-bits).md)) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.
 
 What amazing tool could solve my configuration backup problem?
 
