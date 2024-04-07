@@ -173,24 +173,27 @@ My favourite class of approaches is to build a small core language and build eve
 ## TODO: Finish
 
 ```rust,no_run
-{{#rustdoc_include lambda-calc/p1.rs:definition}}
+{{#rustdoc_include p1.rs:definition}}
 ```
 
 ```rust,no_run
-{{#rustdoc_include lambda-calc/p1.rs:helpers}}
+{{#rustdoc_include p1.rs:helpers}}
 ```
 
 ```rust
-{{#rustdoc_include lambda-calc/p1.rs:demo1}}
+{{#rustdoc_include p1.rs:demo1}}
 ```
 
+<center>
 
+Fin
 
+</center>
 
-
+-----
 
 Here's the full code for you to experiment with:
 
 ```rust,editable
-{{#rustdoc_include lambda-calc/p1.rs:all}}
+{{#rustdoc_include p1.rs:all}}
 ```
