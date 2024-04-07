@@ -30,9 +30,132 @@ Many approaches have been taken to building programming languages and compilers,
 
 <div class="center">
 
-```dot process Test Graph
+```dot process Languages by style and paradigm
 digraph {
-    "processed" -> "graph"
+    conf [label="configuration languages"]
+    clike [label="C-like languages"]
+    Cpp [label="C++"]
+    incomplete [label="Turing Incomplete\n(finite time execution)"]
+    complete [label="Turing Complete\n(unknown time execution)"]
+    HighLevelLangs [label="High level languages"]
+    Fsharp [label="F#"]
+    Csharp [label="C#"]
+
+    incomplete -> conf
+    incomplete -> data
+    incomplete -> build
+
+    data -> JSON
+    data -> INI
+
+    conf -> YAML
+    conf -> INI
+    conf -> JSON
+    conf -> Toml
+    conf -> Starlark
+
+    build -> Starlark
+    build -> Meson
+
+    complete -> HighLevelLangs
+    complete -> incomplete
+
+    HighLevelLangs -> functional
+    HighLevelLangs -> procedural
+    HighLevelLangs -> "object oriented"
+
+    procedural -> Fortran
+    procedural -> clike
+    procedural -> Fsharp
+
+    "object oriented" -> Java
+    "object oriented" -> Python
+    "object oriented" -> Cpp
+    "object oriented" -> Csharp
+    "object oriented" -> OcaML
+
+    clike -> C
+    clike -> Csharp
+    clike -> Cpp
+    clike -> Rust
+    clike -> Zig
+    clike -> Go
+    clike -> JavaScript
+    clike -> TypeScript
+    clike -> Kotlin
+
+    procedural -> Python
+    procedural -> Starlark
+    procedural -> commandline
+
+    commandline -> sh
+    commandline -> zsh
+    commandline -> fsh
+    commandline -> bash
+    commandline -> perl
+
+    functional -> Haskell
+    functional -> Lisp
+    functional -> Fsharp
+    functional -> OcaML
+}
+```
+
+```dot process Languages by runtime
+digraph {
+    rankdir="LR";
+
+    MC [label="Machine Code"]
+    Fsharp [label="F#"]
+    Cpp [label="C++"]
+    Csharp [label="C#"]
+    dotNET [label=".NET"]
+
+    JIT -> Runtime
+    JVM -> JIT
+    dotNET -> Runtime
+    dotNET -> JIT
+    MC -> Runtime
+    LLVMIR -> Runtime [label="llvm"]
+    Browser -> Runtime [label="v8 and co"]
+    Interpreted -> Runtime
+
+    Java -> JVM [label="javac"]
+    Kotlin -> JVM [label="kotlinc"]
+    OcaML -> JVM [label="ocamlc"]
+
+    Csharp -> dotNET [label="visual studio!?"]
+    Fsharp -> dotNET [label="fsc"]
+
+    C -> MC [label="gcc"]
+    Cpp -> MC [label="g++"]
+    Go -> MC [label="golang"]
+    Fortran -> MC
+    Kotlin -> LLVMIR [label="kotlinc"]
+    C -> Zig [label="zig"]
+    Zig -> MC [label="zig"]
+    Cpp -> LLVMIR [label="clang"]
+    Rust -> LLVMIR [label="rustc"]
+    LLVMIR -> MC [label="llvm"]
+    LLVMIR -> WASM [label="llvm"]
+    Haskell -> STG -> Cmm [label="ghc"]
+    Cmm -> MC [label="ghc"]
+    Cmm -> LLVMIR [label="ghc"]
+    Cmm -> C [label="ghc"]
+    JavaScript -> Browser [label="v8 and co"]
+    Browser -> JIT [label="v8 and co"]
+    TypeScript -> JavaScript [label="tsc"]
+    Kotlin -> JavaScript [label="kotlinc"]
+    WASM -> Browser
+    Lisp -> Interpreted
+    sh -> Interpreted
+    zsh -> Interpreted
+    fsh -> Interpreted
+    bash -> Interpreted
+    perl -> Interpreted
+    Python -> JIT [label="cpython"]
+    Meson -> Interpreted
+    Starlark -> Interpreted
 }
 ```
 
