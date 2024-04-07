@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="posts/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.</strong> Lambda Calculus: Building little languages</a></li><li class="chapter-item expanded "><a href="resume.html"><strong aria-hidden="true">9.</strong> Resume</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">10.</strong> Contact</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.</strong> Lambda</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.1.</strong> Lambda Calculus: Building little languages</a></li></ol></li><li class="chapter-item expanded "><a href="resume.html"><strong aria-hidden="true">9.</strong> Resume</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">10.</strong> Contact</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -617,8 +617,8 @@ Specifically these have been tools for assembling apps, programs and infrastruct
 <p>Many approaches have been taken to building programming languages and compilers, and there are almost as many approaches to doing so.</p>
 <h2 id="a-small-family-tree-of-programming-language-models"><a class="header" href="#a-small-family-tree-of-programming-language-models">A small family tree of programming language models</a></h2>
 <div class="center">
-<p><img src="posts/lambda_calculus_building_little_languages_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></p>
-<p><img src="posts/lambda_calculus_building_little_languages_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></p>
+<p><img src="posts/Lambda/lambda_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></p>
+<p><img src="posts/Lambda/lambda_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></p>
 </div>
 <h2 id="my-favourite-approach-lambda-calculus"><a class="header" href="#my-favourite-approach-lambda-calculus">My favourite approach: Lambda Calculus</a></h2>
 <p>My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.</p>
@@ -716,6 +716,165 @@ println!("Another simple term {:?}", a_b_gives_b);
 </span><span class="boring">}
 </span><span class="boring">
 </span><span class="boring">}</span></code></pre></pre>
+<center>
+<p>Fin</p>
+</center>
+<hr />
+<p>Here's the full code for you to experiment with:</p>
+<pre><pre class="playground"><code class="language-rust editable">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+enum Term {
+    Var(usize),
+    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+    Abs(Box&lt;Term&gt;),
+}
+
+fn abs(t: Term) -&gt; Term {
+    Term::Abs(Box::new(t))
+}
+
+fn app(t: Term, a: Term) -&gt; Term {
+    Term::App(Box::new(t), Box::new(a))
+}
+
+fn var(i: usize) -&gt; Term {
+    Term::Var(i)
+}
+
+let a_b_gives_a = abs(abs(var(0)));
+let a_b_gives_b = abs(abs(var(1)));
+println!("A simple term {:?}", a_b_gives_a);
+println!("Another simple term {:?}", a_b_gives_b);
+
+fn render(term: &amp;Term) -&gt; String {
+    format!("{:?}", term)
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><!--
+published: false
+title: Lambda Calculus: Building little languages
+category: [Programming, Languages, Lambda Calculus, IR]
+excerpt: |
+feature_text: |
+  **I believe in the separation of Church and State **
+feature_image: "/assets/imgs/koz3.JPG"
+image: "/assets/imgs/koz3.JPG"
+-->
+<h1 id="wip---work-in-progress-1"><a class="header" href="#wip---work-in-progress-1">WIP - Work in progress</a></h1>
+<p>The following post is a work in progress, but I thought I'd keep uploading it as a way to push myself to finish it sooner rather than later.</p>
+<h1 id="lambda-calculus-building-little-languages-1"><a class="header" href="#lambda-calculus-building-little-languages-1">Lambda Calculus: Building little languages</a></h1>
+<p>In my work I have had several opportunities to build tooling for other developers.
+Specifically these have been tools for assembling apps, programs and infrastructure using a high level language.</p>
+<p>These have mostly been experimental, either exploring the benefits of different compiler architectures, approaches to optimisation or programming paradigms.</p>
+<p>So, I've been stuck with a question:</p>
+<blockquote>
+<p>How do we build a programming language from the smallest number of the simplest parts possible?</p>
+</blockquote>
+<p>Many approaches have been taken to building programming languages and compilers, and there are almost as many approaches to doing so.</p>
+<h2 id="a-small-family-tree-of-programming-language-models-1"><a class="header" href="#a-small-family-tree-of-programming-language-models-1">A small family tree of programming language models</a></h2>
+<div class="center">
+<p><img src="posts/Lambda/lambda_calculus_building_little_languages_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></p>
+<p><img src="posts/Lambda/lambda_calculus_building_little_languages_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></p>
+</div>
+<h2 id="my-favourite-approach-lambda-calculus-1"><a class="header" href="#my-favourite-approach-lambda-calculus-1">My favourite approach: Lambda Calculus</a></h2>
+<p>My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.</p>
+<h2 id="todo-finish-1"><a class="header" href="#todo-finish-1">TODO: Finish</a></h2>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+enum Term {
+    Var(usize),
+    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+    Abs(Box&lt;Term&gt;),
+}
+<span class="boring">
+</span><span class="boring">fn abs(t: Term) -&gt; Term {
+</span><span class="boring">    Term::Abs(Box::new(t))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn app(t: Term, a: Term) -&gt; Term {
+</span><span class="boring">    Term::App(Box::new(t), Box::new(a))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn var(i: usize) -&gt; Term {
+</span><span class="boring">    Term::Var(i)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">let a_b_gives_a = abs(abs(var(0)));
+</span><span class="boring">let a_b_gives_b = abs(abs(var(1)));
+</span><span class="boring">println!("A simple term {:?}", a_b_gives_a);
+</span><span class="boring">println!("Another simple term {:?}", a_b_gives_b);
+</span><span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+</span><span class="boring">enum Term {
+</span><span class="boring">    Var(usize),
+</span><span class="boring">    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+</span><span class="boring">    Abs(Box&lt;Term&gt;),
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn abs(t: Term) -&gt; Term {
+    Term::Abs(Box::new(t))
+}
+
+fn app(t: Term, a: Term) -&gt; Term {
+    Term::App(Box::new(t), Box::new(a))
+}
+
+fn var(i: usize) -&gt; Term {
+    Term::Var(i)
+}
+<span class="boring">
+</span><span class="boring">let a_b_gives_a = abs(abs(var(0)));
+</span><span class="boring">let a_b_gives_b = abs(abs(var(1)));
+</span><span class="boring">println!("A simple term {:?}", a_b_gives_a);
+</span><span class="boring">println!("Another simple term {:?}", a_b_gives_b);
+</span><span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+</span><span class="boring">enum Term {
+</span><span class="boring">    Var(usize),
+</span><span class="boring">    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+</span><span class="boring">    Abs(Box&lt;Term&gt;),
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn abs(t: Term) -&gt; Term {
+</span><span class="boring">    Term::Abs(Box::new(t))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn app(t: Term, a: Term) -&gt; Term {
+</span><span class="boring">    Term::App(Box::new(t), Box::new(a))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn var(i: usize) -&gt; Term {
+</span><span class="boring">    Term::Var(i)
+</span><span class="boring">}
+</span><span class="boring">
+</span>let a_b_gives_a = abs(abs(var(0)));
+let a_b_gives_b = abs(abs(var(1)));
+println!("A simple term {:?}", a_b_gives_a);
+println!("Another simple term {:?}", a_b_gives_b);
+<span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<center>
+<p>Fin</p>
+</center>
+<hr />
 <p>Here's the full code for you to experiment with:</p>
 <pre><pre class="playground"><code class="language-rust editable">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
 enum Term {
