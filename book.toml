@@ -15,7 +15,7 @@ output-to-file = true
 [preprocessor.links]
 
 [output.html]
-default-theme = "dark"
+default-theme = "light"
 preferred-dark-theme = "navy"
 mathjax-support = true
 git-repository-url = 'https://github.com/Cypher1/cypher1.github.io'
