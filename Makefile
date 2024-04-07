@@ -1,4 +1,4 @@
-.PHONY: deploy prepare serve
+.PHONY: deploy prepare serve src/SUMMAR.md
 
 BOOK=".book"
 
@@ -7,7 +7,7 @@ all: prepare
 serve: prepare
 	mdbook serve --open
 
-src/SUMMARY.md: src/posts/*.md
+src/SUMMARY.md:
 	@echo "====> updating SUMMARY.md"
 	bash ./gen.sh
 
