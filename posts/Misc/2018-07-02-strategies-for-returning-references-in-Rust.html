@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Git backed Configuration - Types and Terror</title>
+        <title>Strategies for returning references in Rust - Types and Terror</title>
 
 
         <!-- Custom HTML head -->
@@ -12,24 +12,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/base.css">
+        <link rel="stylesheet" href="../../src/base.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -38,7 +38,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "../";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="../posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html" class="active"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="../posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.</strong> Lambda</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.1.</strong> Lambda Calculus: Building little languages</a></li></ol></li><li class="chapter-item expanded "><a href="../resume.html"><strong aria-hidden="true">9.</strong> Resume</a></li><li class="chapter-item expanded "><a href="../contact.html"><strong aria-hidden="true">10.</strong> Contact</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../../posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">2.</strong> Lambda</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../posts/Lambda/2023-04-20-lambda-calc.html"><strong aria-hidden="true">2.1.</strong> Lambda Calculus: Building little languages</a></li></ol></li><li class="chapter-item expanded "><a href="../../posts/Misc/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">3.</strong> Misc</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../posts/Misc/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">3.1.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="../../posts/Misc/2018-07-02-strategies-for-returning-references-in-Rust.html" class="active"><strong aria-hidden="true">3.2.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="../../posts/Misc/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">3.3.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="../../posts/Misc/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">3.4.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="../../posts/Misc/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">3.5.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="../../posts/Misc/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">3.6.</strong> Git backed Configuration</a></li></ol></li><li class="chapter-item expanded "><a href="../../resume.html"><strong aria-hidden="true">4.</strong> Resume</a></li><li class="chapter-item expanded "><a href="../../contact.html"><strong aria-hidden="true">5.</strong> Contact</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -147,7 +147,7 @@
                     <h1 class="menu-title">Types and Terror</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/Cypher1/cypher1.github.io" title="Git repository" aria-label="Git repository">
@@ -180,79 +180,27 @@
                 <div id="content" class="content">
                     <main>
                         <!--
-published: true
-title: Git backed Configuration
-category: [Dotfiles, Config, Git]
-excerpt: |
-  What amazing tool could solve my configuration backup problem?
-
-  Well, of course, its Git.
-feature_text: |
-  **a man’s home <s>directory</s> is his castle**
-feature_image: "/assets/imgs/koz3.JPG"
-image: "/assets/imgs/koz3.JPG"
+published: false
+title: Strategies for returning references in Rust
+category:
+- Rust
+- Languages
 -->
-<p>I've been using Linux for a little while and along the way have accumulated a fair bit of configuration (even though I try to remove the bits I don't need anymore).</p>
-<p>I often find that these configs help me out (e.g. <a href="../posts/2018-10-01-init.vim-(the-best-bits).html">my Vim config</a>) so, after the first few times I lost bits of it, I spent some time ensuring that I could keep it, even if I changed computers, had a hard drive fail or went mad and wrote a bunch of terrible configuration.</p>
-<p>What amazing tool could solve my configuration backup problem?</p>
-<p>Well, of course, its <a href="https://en.wikipedia.org/wiki/Git">Git</a>.</p>
-<p>I keep any config and useful bash scripts that I need in a git repo. This includes:</p>
-<ul>
-<li><a href="http://vim.wikia.com/wiki/Example_vimrc">Vim config</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/zsh#Sample_.zshrc_files">Zsh config</a></li>
-<li><a href="https://git-scm.com/docs/git-config">Git config</a></li>
-<li><a href="https://i3wm.org/docs/userguide.html">i3 config</a></li>
-<li><a href="https://github.com/powerline/fonts/tree/master/Hack">a font I like</a></li>
-<li>a script for setting up my favourite keyboard config</li>
-<li>a list of <a href="https://pypi.org/">Python</a> and <a href="https://www.npmjs.com">NPM</a> packages I commonly use</li>
-<li>a list of programs that I commonly use</li>
-<li>a script that installs all the above</li>
-</ul>
-<p>So, lets step through what I needed to do this.</p>
-<p>First, (assuming you are a Linux, or possibly Mac/BSD user) I'll assume you are familiar with a terminal (e.g. <a href="https://www.gnu.org/software/bash/">bash</a>).</p>
-<pre><code class="language-bash">cd ~/.config
-</code></pre>
-<p>We're now in one of the most common places to store user specific configuration.
-Lets setup a git repo. I recommend using <a href="https://github.com">Github</a> or <a href="https://bitbucket.org">Bitbucket</a>.</p>
-<p>This should give you an identifier for your git repo, mine is <code>git@github.com:Cypher1/Castle.git</code>.</p>
-<pre><code class="language-bash">git init
-git remote add origin git@github.com:user/repo.git
-</code></pre>
-<p>Now you can add any files that you already have in <code>.config</code>.</p>
-<pre><code class="language-bash">git add important_file_to_backup
-git commit -m "Adding important file"
-</code></pre>
-<p>Nice enough, but we are missing our actual dotfiles (the ones stored in our home directory).</p>
-<p>So, lets grab those, I'll use my <code>zshrc</code> file as an example but you should be able to substitute to make this work for any dotfile.</p>
-<p>First we move the actual dot file into our repo and add it.</p>
-<pre><code class="language-bash">mv ~/.zshrc ~/.config/zshrc
-cd ~/.config/
-git add zshrc
-git commit -m "Adding my zshrc"
-</code></pre>
-<p>Now we need a bit of a trick to make it look (to our programs) like the dotfiles are still where we left them.</p>
-<p>Fortunately there's a great tool for this called <a href="https://en.wikipedia.org/wiki/Symbolic_link">'soft (or symbolic) links'</a>. They make use of the structure of modern file systems to make a 'linked' version of a file or directory.</p>
-<p>The utility to make soft links is called <code>ln</code> or <code>link</code> (find out more with <code>man ln</code>).</p>
-<pre><code class="language-bash">ln -s ~/.config/zshrc ~/.zshrc
-</code></pre>
-<p>This creates a new soft link at <code>~/.zshrc</code> and connects it to <code>~/.config/zshrc</code>.</p>
-<p>Now programs that open <code>~/.zshrc</code> will actually be opening <code>~/.config/zshrc</code>, so all your edits will be tracked in the git repo.</p>
-<p>Always remember to upload your changes to your remote repo so that you have them backed up.</p>
-<pre><code class="language-bash">git push origin master
-</code></pre>
-<p>I recommend learning more about <code>git</code> so that you can manage your backups and your changes to them.</p>
-<p>For me, it was worth creating an installer script that does all my soft linking, and software installation.</p>
-<p>You can find it <a href="https://github.com/Cypher1/Castle/blob/master/bin/arrive">here</a>.</p>
+<p>A really neat explanation of some approaches to references in Rust.</p>
+<p><a href="https://bryce.fisher-fleig.org/blog/strategies-for-returning-references-in-rust/index.html">https://bryce.fisher-fleig.org/blog/strategies-for-returning-references-in-rust/index.html</a></p>
+<p>I've been trying to get my head around the borrowing semantics of Rust. I'm really interested in the possibility of improving the state of memory usage in pure languages like Haskell with linear types and while I understand that some believe that the problem is better solved with regions based management I think Rust has a pretty nice system.</p>
+<p>I hope to write a bit more on linear types, regions and Rust when I understand them better.</p>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../posts/2018-11-01-the-curious-case-of-foldable-either.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../posts/Misc/2018-06-07-setting-up-a-blog.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../posts/Lambda/2023-04-20-lambda-calc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../posts/Misc/2018-10-01-init.vim-(the-best-bits).html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -262,11 +210,11 @@ git commit -m "Adding my zshrc"
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../posts/2018-11-01-the-curious-case-of-foldable-either.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../posts/Misc/2018-06-07-setting-up-a-blog.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../posts/Lambda/2023-04-20-lambda-calc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../posts/Misc/2018-10-01-init.vim-(the-best-bits).html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -283,19 +231,19 @@ git commit -m "Adding my zshrc"
             window.playground_copyable = true;
         </script>
 
-        <script src="../ace.js"></script>
-        <script src="../editor.js"></script>
-        <script src="../mode-rust.js"></script>
-        <script src="../theme-dawn.js"></script>
-        <script src="../theme-tomorrow_night.js"></script>
+        <script src="../../ace.js"></script>
+        <script src="../../editor.js"></script>
+        <script src="../../mode-rust.js"></script>
+        <script src="../../theme-dawn.js"></script>
+        <script src="../../theme-tomorrow_night.js"></script>
 
-        <script src="../elasticlunr.min.js"></script>
-        <script src="../mark.min.js"></script>
-        <script src="../searcher.js"></script>
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
 
