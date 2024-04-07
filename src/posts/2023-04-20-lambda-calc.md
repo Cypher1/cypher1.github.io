@@ -39,3 +39,14 @@ My favourite class of approaches is to build a small core language and build eve
 ```rust
 {{#rustdoc_include lambda-calc/p1.rs:demo1}}
 ```
+
+
+
+
+
+
+Here's the full code for you to experiment with:
+
+```rust,editable
+{{#rustdoc_include lambda-calc/p1.rs:all}}
+```
