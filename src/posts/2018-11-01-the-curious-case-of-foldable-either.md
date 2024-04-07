@@ -10,7 +10,7 @@ feature_image: "/assets/imgs/koz1.JPG"
 image: "/assets/imgs/koz1.JPG"
 -->
 
-I recently wrote something like the following:
+I recently wrote something like the following **Haskell**:
 ```haskell
 divOrFail :: Either Int String -> Int -> Either Int String
 divOrFail (Left d) n
@@ -31,7 +31,7 @@ Lets start with the more complicated part. In particular this type signature:
 applyAll :: Foldable f => (Either a err -> b -> Either a err) -> a -> f b -> Either a err
 ```
 
-So, first ignore the type contraints (the `Foldable f =>` bit) we can come back to it.
+So, first ignore the type constraints (the `Foldable f =>` bit) we can come back to it.
 Our arguments are:
 - a function that takes something of type `b` and either an `a` value or an error,
 - a start value
@@ -62,8 +62,8 @@ divOrFail n (Left d)
   | otherwise = Left $ d`div`n
 ```
 
-When the 'something' is an `Int` that is a multiple of n we divide it by n and return the result.
-If it is not divisble, we return a 'Right' containing an error message of the form (e.g. 'Cannot divide 3 by 2') which tells the user that the number wasn't able to be divided.
+When the 'something' is an `Int` that is a multiple of **n** we divide it by **n** and return the result.
+If it is not divisible, we return a 'Right' containing an error message of the form (e.g. 'Cannot divide 3 by 2') which tells the user that the number wasn't able to be divided.
 
 `
 divOrFail _ (Right e) = (Right e)
@@ -128,7 +128,7 @@ applyAll divOrFail 13 :: Foldable f => f Int -> Either Int String
 
 I'd never restricted the type to a list making `applyAll divOrFail` a polymorphic function.
 In fact, `applyAll divOrFail` could take any `foldable` over `Int`s.
-A lot of different data types implement `Foldable`, most of the 'container' types (e.g. List, Set, Map) have a `Foldable` instance. So this tells us that `Either [a]` has a `Foldable` instance. A quick search on [hoogle](https://www.haskell.org/hoogle/?hoogle=Foldable) finds the package `Data.Foldable` and [tada](http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#line-326when).
+A lot of different data types implement `Foldable`, most of the 'container' types (e.g. `List`, `Set`, `Map`) have a `Foldable` instance. So this tells us that `Either [a]` has a `Foldable` instance. A quick search on the **Haskell** function search tool ['hoogle'](https://www.haskell.org/hoogle/?hoogle=Foldable) finds the package `Data.Foldable` and [tada](http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#line-326when).
 
 We can now have a look at `Either`'s `Foldable` instance, specifically, the `foldr` implementation (it's `foldl` is implemented using `foldr`).
 
@@ -146,6 +146,6 @@ We can see a similar thing looking at the types.
 In fact, if we think a bit more about the type `Either a b` it makes sense that the `f` in our `applyAll` function isn't being matched by `Either`, it's being matched by `Either a`. This means that the 'contents' of our polymorphic type, `f`, is `b`, not `a`.
 
 
-TLDR: I had the arguments to `Either` around the wrong way and `Either err` acts as if it were a list of 0 or 1 elements.
+**TLDR**: I had the arguments to `Either` around the wrong way and `Either err` acts as if it were a list of 0 or 1 elements.
 
 [Here's the code from above](../code/foldable_either.hs)
