@@ -190,7 +190,7 @@ feature_text: |
 feature_image: "/assets/imgs/koz1.JPG"
 image: "/assets/imgs/koz1.JPG"
 -->
-<p>I recently wrote something like the following:</p>
+<p>I recently wrote something like the following <strong>Haskell</strong>:</p>
 <pre><code class="language-haskell">divOrFail :: Either Int String -&gt; Int -&gt; Either Int String
 divOrFail (Left d) n
   | n==0 = Right ("Cannot divide by 0")
@@ -206,7 +206,7 @@ So lets break this down a bit (or <a href="#the-catch">skip it</a> if you like).
 <p>Lets start with the more complicated part. In particular this type signature:</p>
 <pre><code class="language-haskell">applyAll :: Foldable f =&gt; (Either a err -&gt; b -&gt; Either a err) -&gt; a -&gt; f b -&gt; Either a err
 </code></pre>
-<p>So, first ignore the type contraints (the <code>Foldable f =&gt;</code> bit) we can come back to it.
+<p>So, first ignore the type constraints (the <code>Foldable f =&gt;</code> bit) we can come back to it.
 Our arguments are:</p>
 <ul>
 <li>a function that takes something of type <code>b</code> and either an <code>a</code> value or an error,</li>
@@ -230,8 +230,8 @@ Our arguments are:</p>
   | (d`mod`n)/=0 = Right ("Cannot divide "++show d++" by "++show n)
   | otherwise = Left $ d`div`n
 </code></pre>
-<p>When the 'something' is an <code>Int</code> that is a multiple of n we divide it by n and return the result.
-If it is not divisble, we return a 'Right' containing an error message of the form (e.g. 'Cannot divide 3 by 2') which tells the user that the number wasn't able to be divided.</p>
+<p>When the 'something' is an <code>Int</code> that is a multiple of <strong>n</strong> we divide it by <strong>n</strong> and return the result.
+If it is not divisible, we return a 'Right' containing an error message of the form (e.g. 'Cannot divide 3 by 2') which tells the user that the number wasn't able to be divided.</p>
 <p><code>divOrFail _ (Right e) = (Right e)</code>
 When the 'something' is a string, we return the string (e.g. an error message).</p>
 <p>This allows me to write things like:</p>
@@ -271,7 +271,7 @@ applyAll divOrFail 13 :: Foldable f =&gt; f Int -&gt; Either Int String
 </code></pre>
 <p>I'd never restricted the type to a list making <code>applyAll divOrFail</code> a polymorphic function.
 In fact, <code>applyAll divOrFail</code> could take any <code>foldable</code> over <code>Int</code>s.
-A lot of different data types implement <code>Foldable</code>, most of the 'container' types (e.g. List, Set, Map) have a <code>Foldable</code> instance. So this tells us that <code>Either [a]</code> has a <code>Foldable</code> instance. A quick search on <a href="https://www.haskell.org/hoogle/?hoogle=Foldable">hoogle</a> finds the package <code>Data.Foldable</code> and <a href="http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#line-326when">tada</a>.</p>
+A lot of different data types implement <code>Foldable</code>, most of the 'container' types (e.g. <code>List</code>, <code>Set</code>, <code>Map</code>) have a <code>Foldable</code> instance. So this tells us that <code>Either [a]</code> has a <code>Foldable</code> instance. A quick search on the <strong>Haskell</strong> function search tool <a href="https://www.haskell.org/hoogle/?hoogle=Foldable">'hoogle'</a> finds the package <code>Data.Foldable</code> and <a href="http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#line-326when">tada</a>.</p>
 <p>We can now have a look at <code>Either</code>'s <code>Foldable</code> instance, specifically, the <code>foldr</code> implementation (it's <code>foldl</code> is implemented using <code>foldr</code>).</p>
 <pre><code class="language-haskell">foldr _ z (Left _) = z
 foldr f z (Right y) = f y z
@@ -280,7 +280,7 @@ foldr f z (Right y) = f y z
 <p>Looking at the second line, as can see that it is the <code>Right</code> side of the either that the <code>foldr</code> is running the function on.</p>
 <p>We can see a similar thing looking at the types.</p>
 <p>In fact, if we think a bit more about the type <code>Either a b</code> it makes sense that the <code>f</code> in our <code>applyAll</code> function isn't being matched by <code>Either</code>, it's being matched by <code>Either a</code>. This means that the 'contents' of our polymorphic type, <code>f</code>, is <code>b</code>, not <code>a</code>.</p>
-<p>TLDR: I had the arguments to <code>Either</code> around the wrong way and <code>Either err</code> acts as if it were a list of 0 or 1 elements.</p>
+<p><strong>TLDR</strong>: I had the arguments to <code>Either</code> around the wrong way and <code>Either err</code> acts as if it were a list of 0 or 1 elements.</p>
 <p><a href="../code/foldable_either.hs">Here's the code from above</a></p>
 
                     </main>
