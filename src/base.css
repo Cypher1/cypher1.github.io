@@ -1,0 +1,21 @@
+.center {
+  display: block; margin: auto; text-align:center;
+}
+
+.circle-image {
+  border-radius: 50%;
+}
+
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+.footer {
+  margin-top: 5vh;
+  margin-bottom: 1vh;
+  text-align: center;
+}

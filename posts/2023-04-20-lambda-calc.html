@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Setting up a Blog with Git - Types and Terror</title>
+        <title>Lambda Calculus: Building little languages - Types and Terror</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../posts/2018-06-07-setting-up-a-blog.html" class="active"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="../posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="../posts/2023-04-20-lambda-calc.html"><strong aria-hidden="true">8.</strong> Lambda Calculus: Building little languages</a></li><li class="chapter-item expanded "><a href="../contact.html"><strong aria-hidden="true">9.</strong> Contact</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="../posts/2018-06-07-setting-up-a-blog.html"><strong aria-hidden="true">2.</strong> Setting up a Blog with Git</a></li><li class="chapter-item expanded "><a href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html"><strong aria-hidden="true">3.</strong> Strategies for returning references in Rust</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-01-init.vim-(the-best-bits).html"><strong aria-hidden="true">4.</strong> init.vim</a></li><li class="chapter-item expanded "><a href="../posts/2018-10-05-lost-13kb-of-js.html"><strong aria-hidden="true">5.</strong> Lost - 13kb of js</a></li><li class="chapter-item expanded "><a href="../posts/2018-11-01-the-curious-case-of-foldable-either.html"><strong aria-hidden="true">6.</strong> The curious case of Either's Foldable instance</a></li><li class="chapter-item expanded "><a href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html"><strong aria-hidden="true">7.</strong> Git backed Configuration</a></li><li class="chapter-item expanded "><a href="../posts/2023-04-20-lambda-calc.html" class="active"><strong aria-hidden="true">8.</strong> Lambda Calculus: Building little languages</a></li><li class="chapter-item expanded "><a href="../contact.html"><strong aria-hidden="true">9.</strong> Contact</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -180,113 +180,166 @@
                 <div id="content" class="content">
                     <main>
                         <!--
-published: false 
-title: Setting up a Blog with Git
-category: Blogging
+published: false
+title: Lambda Calculus: Building little languages
+category: [Programming, Languages, Lambda Calculus, IR]
 excerpt: |
-  My first post will just cover some of the steps I took to set this site up as a bit of a walk through. If you're not wanting to build a site today feel free to look through it anyway.
 feature_text: |
-  ## Blog: a ~~regularly~~ updated website
-feature_image: "/assets/imgs/koz2.JPG"
-image: "/assets/imgs/koz2.JPG"
+  **I believe in the separation of Church and State **
+feature_image: "/assets/imgs/koz3.JPG"
+image: "/assets/imgs/koz3.JPG"
 -->
-<p>Hi, I'm <span class="name">Jay</span>. I write software for a living and actually really enjoy it. Well, most of the time.</p>
-<p>I keep finding myself wanting to write up some of the things I've learnt about and the mistakes I've made. So here we are. Hopefully someone can learn from it and possibly avoid the same issues that I had.</p>
-<p>My first post will just cover some of the steps I took to set this site up as a bit of a walk through. If you're not wanting to build a site today feel free to look through it anyway. I'm hoping to follow up with some tips on using Git, Shell (in particular zsh) but for now I'll try to keep it brief.</p>
-<p>It'll be far easier if you already use a terminal regularly and are familiar with Git but I'll try to introduce things as they come up.</p>
-<h1 id="what-are-we-using"><a class="header" href="#what-are-we-using">What are we using?</a></h1>
-<p>First up, I want to thank David Darnes who make the <a href="https://alembic.darn.es">Alembic theme</a>. That theme is responsible for the majority of the styling (and a significant portion of the functionality) of the site. He did an awesome job and even included some really nice features like a service worker, RSS feed, and search and contact pages.</p>
-<p>I plan to tweak it further to suit my needs but the theme is a lovely collection of useful templates and <a href="https://www.w3schools.com/css/">CSS</a> and is easy to install and use.</p>
-<p>For hosting, I'm using <a href="https://pages.github.com/">Github Pages</a>, a very neat static site tool built by and integrated with Github. It takes a bunch of configuration files and pages written in <a href="https://www.markdowntutorial.com/">Markdown</a> and turns them into a site that runs on <code>$USERNAME.github.io</code> for free.</p>
-<p>P.S. I'm going to use <code>this notation</code> to show that I mean a command that can be run in your terminal and <code>$this_notation</code> to show that the value might not be the same for everyone and should be something you set up or something already available in your <a href="https://www.shellscript.sh/">shell</a>.</p>
-<h2 id="steps"><a class="header" href="#steps">Steps</a></h2>
-<h4 id="1-get-a-github-account-or-use-one-that-you-already-have"><a class="header" href="#1-get-a-github-account-or-use-one-that-you-already-have">1. Get a Github account or use one that you already have.</a></h4>
-<p>Sign up at <a href="https://github.com/">https://github.com/</a> (or you can use other hosts for git and your site if you are already familiar with them).</p>
-<h4 id="2-create-a-new-repository-called-usernamegithubio"><a class="header" href="#2-create-a-new-repository-called-usernamegithubio">2. Create a new repository called <code>$USERNAME.github.io</code>.</a></h4>
-<ul>
-<li>Use <a href="https://github.com/new">https://github.com/new</a> if you're using Github.</li>
-<li>Call it <code>$USERNAME.github.io</code> (a special repository name that tells github that you want to use it as a github pages site.</li>
-</ul>
-<h4 id="3-install-git"><a class="header" href="#3-install-git">3. Install 'git'</a></h4>
-<p>Git is a really useful tool for managing (mostly text) files that change over time while also being edited by multiple people. It's a pretty complex piece of software so I'll point you to some other tutorials about it.</p>
-<p>Here's some to get git installed on a few common platforms:</p>
-<ul>
-<li>For most Linux users: <code>sudo apt install git</code></li>
-<li>For Mac users: I recommend <code>brew install git</code> (<a href="https://github.com/Homebrew/brew">Homebrew</a> is really awesome).</li>
-<li>Setting up Git and Github on your Mac
-<ul>
-<li><a href="http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/"> http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/ </a></li>
-</ul>
-</li>
-<li>For windows users:
-<ul>
-<li>Installing Git – the easy way
-<ul>
-<li><a href="https://gist.github.com/derhuerst/1b15ff4652a867391f03"> https://gist.github.com/derhuerst/1b15ff4652a867391f03 </a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-install-ruby-bundler-jekyll-an-editor-etc"><a class="header" href="#4-install-ruby-bundler-jekyll-an-editor-etc">4. Install ruby, bundler, jekyll, an editor etc.</a></h4>
-<p>There's an official quite start guide to jekyll <a href="https://jekyllrb.com/docs/quickstart/">here</a> but I'll add a tldr.</p>
-<ul>
-<li>
-<p>Linux: Again for linux users either you can probably use <code>apt install ruby</code> (or you proabably know how to install packages yourself).</p>
-</li>
-<li>
-<p>Mac: Similar to linux <code>brew install ruby</code></p>
-</li>
-<li>
-<p>Windows users can use <a href="https://rubyinstaller.org/">rubyinstaller</a> but I can't promise that it works particularly well.</p>
-</li>
-</ul>
-<p>Now that we all have ruby, we can use it's package manager (gem) to install jekyll (and bundler) tools for running the site:
-<code>gem install jekyll bundler</code>.</p>
-<h4 id="5-create-a-new-jekyll-site"><a class="header" href="#5-create-a-new-jekyll-site">5. Create a new Jekyll site</a></h4>
-<p>Now it's time to build a skeleton for your site. You can use a template online (I used the <a href="https://alembic.darn.es">Alembic theme</a>) or use <code>jekyll new $USERNAME.github.io</code> to make a completely clean new site.</p>
-<ul>
-<li><code>cd $USERNAME.github.io</code></li>
-</ul>
-<h4 id="6-set-up-your-repo"><a class="header" href="#6-set-up-your-repo">6. Set up your repo.</a></h4>
-<ul>
-<li>Turn the jekyll site into a git repo.
-<ul>
-<li><code>git init</code></li>
-</ul>
-</li>
-<li>Add a 'remote'
-<ul>
-<li><code>git remote add git@github.com:$USERNAME/$USERNAME.github.io.git</code></li>
-</ul>
-</li>
-<li>Push your code up to github for the first time!
-<ul>
-<li><code>git push -u origin master</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="7-try-it-locally"><a class="header" href="#7-try-it-locally">7. Try it locally</a></h4>
-<p>The command that we are going to use to run the site locally is:
-<code>jekyll server --livereload</code></p>
-<p>This tells <code>jekyll</code> the program that builds the site to run a server locally (it should be on localhost:4000. The <code>--livereload</code> flag tells jekyll to reload the site when the source files change. This makes it easy to modify the site quickly and see what the outcome is.</p>
-<p>If you're looking around for things to change try looking in <code>./_posts</code>,</p>
-<p>Any theme styling is in <code>./_sass</code> and some config in <code>./_config</code> and there's loads to play around with before it's 'production ready' but hopefully this gets you started.</p>
-<h4 id="8-try-it-online"><a class="header" href="#8-try-it-online">8. Try it online</a></h4>
-<p>When you're ready you can commit your changes to your git remote and then <code>git push</code> them up to your server.</p>
-<p>Now your <code>$USERNAME.github.io</code> should be live with your site.</p>
-<p>I'm working on a follow up on this post that talks more about the specifics about jekyll that surprised me. See you soon.</p>
-<hr />
+<h1 id="wip---work-in-progress"><a class="header" href="#wip---work-in-progress">WIP - Work in progress</a></h1>
+<p>The following post is a work in progress, but I thought I'd keep uploading it as a way to push myself to finish it sooner rather than later.</p>
+<h1 id="lambda-calculus-building-little-languages"><a class="header" href="#lambda-calculus-building-little-languages">Lambda Calculus: Building little languages</a></h1>
+<p>In my work I have had several opportunities to build tooling for other developers.
+Specifically these have been tools for assembling apps, programs and infrastructure using a high level language.</p>
+<p>These have mostly been experimental, either exploring the benefits of different compiler architectures, approaches to optimisation or programming paradigms.</p>
+<p>So, I've been stuck with a question:</p>
+<blockquote>
+<p>How do we build a programming language from the smallest number of the simplest parts possible?</p>
+</blockquote>
+<p>Many approaches have been taken to building programming languages and compilers, and there are almost as many approaches to doing so.</p>
+<h2 id="a-small-family-tree-of-programming-language-models"><a class="header" href="#a-small-family-tree-of-programming-language-models">A small family tree of programming language models</a></h2>
+<div class="center">
+<p><img src="lambda_calculus_building_little_languages_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></p>
+<p><img src="lambda_calculus_building_little_languages_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></p>
+</div>
+<h2 id="my-favourite-approach-lambda-calculus"><a class="header" href="#my-favourite-approach-lambda-calculus">My favourite approach: Lambda Calculus</a></h2>
+<p>My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.</p>
+<h2 id="todo-finish"><a class="header" href="#todo-finish">TODO: Finish</a></h2>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+enum Term {
+    Var(usize),
+    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+    Abs(Box&lt;Term&gt;),
+}
+<span class="boring">
+</span><span class="boring">fn abs(t: Term) -&gt; Term {
+</span><span class="boring">    Term::Abs(Box::new(t))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn app(t: Term, a: Term) -&gt; Term {
+</span><span class="boring">    Term::App(Box::new(t), Box::new(a))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn var(i: usize) -&gt; Term {
+</span><span class="boring">    Term::Var(i)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">let a_b_gives_a = abs(abs(var(0)));
+</span><span class="boring">let a_b_gives_b = abs(abs(var(1)));
+</span><span class="boring">println!("A simple term {:?}", a_b_gives_a);
+</span><span class="boring">println!("Another simple term {:?}", a_b_gives_b);
+</span><span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+</span><span class="boring">enum Term {
+</span><span class="boring">    Var(usize),
+</span><span class="boring">    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+</span><span class="boring">    Abs(Box&lt;Term&gt;),
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn abs(t: Term) -&gt; Term {
+    Term::Abs(Box::new(t))
+}
+
+fn app(t: Term, a: Term) -&gt; Term {
+    Term::App(Box::new(t), Box::new(a))
+}
+
+fn var(i: usize) -&gt; Term {
+    Term::Var(i)
+}
+<span class="boring">
+</span><span class="boring">let a_b_gives_a = abs(abs(var(0)));
+</span><span class="boring">let a_b_gives_b = abs(abs(var(1)));
+</span><span class="boring">println!("A simple term {:?}", a_b_gives_a);
+</span><span class="boring">println!("Another simple term {:?}", a_b_gives_b);
+</span><span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+</span><span class="boring">enum Term {
+</span><span class="boring">    Var(usize),
+</span><span class="boring">    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+</span><span class="boring">    Abs(Box&lt;Term&gt;),
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn abs(t: Term) -&gt; Term {
+</span><span class="boring">    Term::Abs(Box::new(t))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn app(t: Term, a: Term) -&gt; Term {
+</span><span class="boring">    Term::App(Box::new(t), Box::new(a))
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn var(i: usize) -&gt; Term {
+</span><span class="boring">    Term::Var(i)
+</span><span class="boring">}
+</span><span class="boring">
+</span>let a_b_gives_a = abs(abs(var(0)));
+let a_b_gives_b = abs(abs(var(1)));
+println!("A simple term {:?}", a_b_gives_a);
+println!("Another simple term {:?}", a_b_gives_b);
+<span class="boring">
+</span><span class="boring">fn render(term: &amp;Term) -&gt; String {
+</span><span class="boring">    format!("{:?}", term)
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">}</span></code></pre></pre>
+<p>Here's the full code for you to experiment with:</p>
+<pre><pre class="playground"><code class="language-rust editable">#[derive(Debug, Clone, Eq, Hash, Ord, PartialOrd, PartialEq)]
+enum Term {
+    Var(usize),
+    App(Box&lt;Term&gt;, Box&lt;Term&gt;),
+    Abs(Box&lt;Term&gt;),
+}
+
+fn abs(t: Term) -&gt; Term {
+    Term::Abs(Box::new(t))
+}
+
+fn app(t: Term, a: Term) -&gt; Term {
+    Term::App(Box::new(t), Box::new(a))
+}
+
+fn var(i: usize) -&gt; Term {
+    Term::Var(i)
+}
+
+let a_b_gives_a = abs(abs(var(0)));
+let a_b_gives_b = abs(abs(var(1)));
+println!("A simple term {:?}", a_b_gives_a);
+println!("Another simple term {:?}", a_b_gives_b);
+
+fn render(term: &amp;Term) -&gt; String {
+    format!("{:?}", term)
+}
+</code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../contact.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -296,11 +349,11 @@ image: "/assets/imgs/koz2.JPG"
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../posts/2019-01-09-my-castle-(dotfiles-in-git).html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../posts/2018-07-02-strategies-for-returning-references-in-Rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../contact.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
