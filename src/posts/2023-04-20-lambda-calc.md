@@ -72,7 +72,8 @@ digraph {
     "object oriented" -> Python
     "object oriented" -> Cpp
     "object oriented" -> Csharp
-    "object oriented" -> OcaML
+    "object oriented" -> OCaml
+    "object oriented" -> erlang
 
     clike -> C
     clike -> Csharp
@@ -97,63 +98,67 @@ digraph {
     functional -> Haskell
     functional -> Lisp
     functional -> Fsharp
-    functional -> OcaML
+    functional -> OCaml
 }
 ```
 
 ```dot process Languages by runtime
 digraph {
-    rankdir="LR";
-
-    MC [label="Machine Code"]
     Fsharp [label="F#"]
     Cpp [label="C++"]
     Csharp [label="C#"]
     dotNET [label=".NET (MSIL/CIL)"]
+    LLVMIR [label="LLVM IR"]
+    browser [label="Browser IR"]
+    run [color=red]
 
-    # JITs
-    "Browser IR" -> Runtime
-    JVM -> Runtime
-    dotNET -> Runtime [label="CLR"]
-    dotNET -> MC [label="coreRT"]
-    LLVMIR -> Runtime [label="llvm jit"]
-    LLVMIR -> MC [label="llvm"]
+    browser -> run [label="browser", color=red]
+    JVM -> run [label="java", color=red]
+    dotNET -> run [label="CLR", color=red]
+    dotNET -> binary [label="coreRT"]
+    LLVMIR -> run [label="llvm jit", color=red]
+    LLVMIR -> assembly [label="llc"]
+    assembly -> binary [label="assembler&linker"]
+    binary -> run [label="exec", color=red]
     LLVMIR -> WASM [label="llvm"]
-    MC -> Runtime
 
     Java -> JVM [label="javac"]
     Kotlin -> JVM [label="kotlinc"]
-    OcaML -> JVM [label="ocamlc"]
+    OCaml -> JVM [label="ocamlc"]
 
     Csharp -> dotNET [label="visual studio!?"]
     Fsharp -> dotNET [label="fsc"]
 
-    C -> MC [label="gcc"]
-    Cpp -> MC [label="g++"]
-    Go -> MC [label="goc"]
-    Fortran -> MC [label="gfortran\nifort\npgf77"]
-    Kotlin -> LLVMIR [label="kotlinc"]
-    C -> Zig [label="zig"]
-    Zig -> MC [label="zig"]
-    Zig -> LLVMIR [label="zig"]
+    C -> assembly [label="gcc"]
+    erlang -> binary [label="erlc"]
+    Cpp -> assembly [label="g++"]
+    Go -> binary [label="go"]
+    Fortran -> binary [label="gfortran\nifort\npgf77"]
+    Kotlin -> LLVMIR [label="kotlinc", color=blue]
+    C -> Zig [label="zig", color=blue]
+    Cpp -> Zig [label="zig", color=blue]
+    Zig -> binary [label="zig"]
+    Zig -> LLVMIR [label="zig", color=blue]
     Cpp -> LLVMIR [label="clang"]
+    C -> LLVMIR [label="clang"]
     Rust -> LLVMIR [label="rustc"]
     Haskell -> STG -> Cmm [label="ghc"]
-    Cmm -> MC [label="ghc"]
-    Cmm -> LLVMIR [label="ghc"]
+    Cmm -> binary [label="ghc", color=blue]
+    Cmm -> LLVMIR [label="ghc", color=blue]
     Cmm -> C [label="ghc"]
-    JavaScript -> "Browser IR" [label="v8 and co"]
-    JavaScript -> C [label="shermes"]
+    JavaScript -> browser [label="v8 and co"]
+    JavaScript -> C [label="shermes", color=blue]
+    JavaScript -> TypeScript [label="shermes", color=blue]
     TypeScript -> JavaScript [label="tsc"]
-    Kotlin -> JavaScript [label="kotlinc"]
-    WASM -> "Browser IR" [label="v8 and co"]
-    Lisp -> Runtime [label="lisp"]
-    sh -> Runtime [label="sh"]
-    zsh -> Runtime [label="zsh"]
-    fsh -> Runtime [label="fsh"]
-    bash -> Runtime [label="bash"]
-    perl -> Runtime [label="perl"]
-    Python -> Runtime [label="cpython"]
+    Kotlin -> JavaScript [label="kotlinc", color=blue]
+    WASM -> browser [label="v8 and co"]
+    Lisp -> run [label="lisp", color=red]
+    sh -> run [label="sh", color=red]
+    zsh -> run [label="zsh", color=red]
+    fsh -> run [label="fsh", color=red]
+    bash -> run [label="bash", color=red]
+    perl -> run [label="perl", color=red]
+    Python -> run [label="cpython", color=red]
 }
 ```
 
