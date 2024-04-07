@@ -9,6 +9,10 @@ feature_image: "/assets/imgs/koz3.JPG"
 image: "/assets/imgs/koz3.JPG"
 -->
 
+# WIP - Work in progress
+
+The following post is a work in progress, but I thought I'd keep uploading it as a way to push myself to finish it sooner rather than later.
+
 # Lambda Calculus: Building little languages
 
 In my work I have had several opportunities to build tooling for other developers.
