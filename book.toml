@@ -11,6 +11,7 @@ create-missing = false
 
 [preprocessor.graphviz]
 output-to-file = true
+link-to-file = true
 [preprocessor.index]
 [preprocessor.links]
 
