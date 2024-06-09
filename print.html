@@ -213,8 +213,134 @@ Specifically these have been tools for assembling apps, programs and infrastruct
 <p>Many approaches have been taken to building programming languages and compilers, and there are almost as many approaches to doing so.</p>
 <h2 id="a-small-family-tree-of-programming-language-models"><a class="header" href="#a-small-family-tree-of-programming-language-models">A small family tree of programming language models</a></h2>
 <div class="center">
-<p><a href="posts/Lambda/lambda_languages_by_style_and_paradigm_0.generated.svg" title="Languages by style and paradigm"><img src="posts/Lambda/lambda_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></a></p>
-<p><a href="posts/Lambda/lambda_languages_by_runtime_1.generated.svg" title="Languages by runtime"><img src="posts/Lambda/lambda_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></a></p>
+<pre><code class="language-dot process Languages by style and paradigm">digraph {
+    conf [label="configuration languages"]
+    clike [label="C-like languages"]
+    Cpp [label="C++"]
+    incomplete [label="Turing Incomplete\n(finite time execution)"]
+    complete [label="Turing Complete\n(unknown time execution)"]
+    HighLevelLangs [label="High level languages"]
+    Fsharp [label="F#"]
+    Csharp [label="C#"]
+
+    incomplete -&gt; conf
+    incomplete -&gt; data
+    incomplete -&gt; build
+
+    data -&gt; JSON
+    data -&gt; INI
+
+    conf -&gt; YAML
+    conf -&gt; INI
+    conf -&gt; JSON
+    conf -&gt; Toml
+    conf -&gt; Starlark
+
+    build -&gt; Starlark
+    build -&gt; Meson
+
+    complete -&gt; HighLevelLangs
+    complete -&gt; incomplete
+
+    HighLevelLangs -&gt; functional
+    HighLevelLangs -&gt; procedural
+    HighLevelLangs -&gt; "object oriented"
+
+    procedural -&gt; Fortran
+    procedural -&gt; clike
+    procedural -&gt; Fsharp
+
+    "object oriented" -&gt; Java
+    "object oriented" -&gt; Python
+    "object oriented" -&gt; Cpp
+    "object oriented" -&gt; Csharp
+    "object oriented" -&gt; OCaml
+    "object oriented" -&gt; erlang
+
+    clike -&gt; C
+    clike -&gt; Csharp
+    clike -&gt; Cpp
+    clike -&gt; Rust
+    clike -&gt; Zig
+    clike -&gt; Go
+    clike -&gt; JavaScript
+    clike -&gt; TypeScript
+    clike -&gt; Kotlin
+
+    procedural -&gt; Python
+    procedural -&gt; Starlark
+    procedural -&gt; commandline
+
+    commandline -&gt; sh
+    commandline -&gt; zsh
+    commandline -&gt; fsh
+    commandline -&gt; bash
+    commandline -&gt; perl
+
+    functional -&gt; Haskell
+    functional -&gt; Lisp
+    functional -&gt; Fsharp
+    functional -&gt; OCaml
+}
+</code></pre>
+<pre><code class="language-dot process Languages by runtime">digraph {
+    Fsharp [label="F#"]
+    Cpp [label="C++"]
+    Csharp [label="C#"]
+    dotNET [label=".NET (MSIL/CIL)"]
+    LLVMIR [label="LLVM IR"]
+    browser [label="Browser IR"]
+    run [color=red]
+
+    browser -&gt; run [label="browser", color=red]
+    JVM -&gt; run [label="java", color=red]
+    dotNET -&gt; run [label="CLR", color=red]
+    dotNET -&gt; binary [label="coreRT"]
+    LLVMIR -&gt; run [label="llvm jit", color=red]
+    LLVMIR -&gt; assembly [label="llc"]
+    assembly -&gt; binary [label="assembler&amp;linker"]
+    binary -&gt; run [label="exec", color=red]
+    LLVMIR -&gt; WASM [label="llvm"]
+
+    Java -&gt; JVM [label="javac"]
+    Kotlin -&gt; JVM [label="kotlinc"]
+    OCaml -&gt; JVM [label="ocamlc"]
+
+    Csharp -&gt; dotNET [label="visual studio!?"]
+    Fsharp -&gt; dotNET [label="fsc"]
+
+    C -&gt; assembly [label="gcc"]
+    erlang -&gt; binary [label="erlc"]
+    Cpp -&gt; assembly [label="g++"]
+    Go -&gt; binary [label="go"]
+    Fortran -&gt; binary [label="gfortran\nifort\npgf77"]
+    Kotlin -&gt; LLVMIR [label="kotlinc", color=blue]
+    C -&gt; Zig [label="zig", color=blue]
+    Cpp -&gt; Zig [label="zig", color=blue]
+    Zig -&gt; binary [label="zig"]
+    Zig -&gt; LLVMIR [label="zig", color=blue]
+    Cpp -&gt; LLVMIR [label="clang"]
+    C -&gt; LLVMIR [label="clang"]
+    Rust -&gt; LLVMIR [label="rustc"]
+    Haskell -&gt; STG -&gt; Cmm [label="ghc"]
+    Cmm -&gt; binary [label="ghc", color=blue]
+    Cmm -&gt; LLVMIR [label="ghc", color=blue]
+    Cmm -&gt; C [label="ghc"]
+    JavaScript -&gt; browser [label="v8 and co"]
+    JavaScript -&gt; C [label="shermes", color=blue]
+    JavaScript -&gt; TypeScript [label="shermes", color=blue]
+    TypeScript -&gt; JavaScript [label="tsc"]
+    Kotlin -&gt; JavaScript [label="kotlinc", color=blue]
+    WASM -&gt; browser [label="v8 and co"]
+    Lisp -&gt; run [label="lisp", color=red]
+    sh -&gt; run [label="sh", color=red]
+    zsh -&gt; run [label="zsh", color=red]
+    fsh -&gt; run [label="fsh", color=red]
+    bash -&gt; run [label="bash", color=red]
+    perl -&gt; run [label="perl", color=red]
+    Python -&gt; run [label="cpython", color=red]
+}
+</code></pre>
 </div>
 <h2 id="my-favourite-approach-lambda-calculus"><a class="header" href="#my-favourite-approach-lambda-calculus">My favourite approach: Lambda Calculus</a></h2>
 <p>My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.</p>
@@ -368,8 +494,134 @@ Specifically these have been tools for assembling apps, programs and infrastruct
 <p>Many approaches have been taken to building programming languages and compilers, and there are almost as many approaches to doing so.</p>
 <h2 id="a-small-family-tree-of-programming-language-models-1"><a class="header" href="#a-small-family-tree-of-programming-language-models-1">A small family tree of programming language models</a></h2>
 <div class="center">
-<p><a href="posts/Lambda/lambda_calculus_building_little_languages_languages_by_style_and_paradigm_0.generated.svg" title="Languages by style and paradigm"><img src="posts/Lambda/lambda_calculus_building_little_languages_languages_by_style_and_paradigm_0.generated.svg" alt="" title="Languages by style and paradigm" /></a></p>
-<p><a href="posts/Lambda/lambda_calculus_building_little_languages_languages_by_runtime_1.generated.svg" title="Languages by runtime"><img src="posts/Lambda/lambda_calculus_building_little_languages_languages_by_runtime_1.generated.svg" alt="" title="Languages by runtime" /></a></p>
+<pre><code class="language-dot process Languages by style and paradigm">digraph {
+    conf [label="configuration languages"]
+    clike [label="C-like languages"]
+    Cpp [label="C++"]
+    incomplete [label="Turing Incomplete\n(finite time execution)"]
+    complete [label="Turing Complete\n(unknown time execution)"]
+    HighLevelLangs [label="High level languages"]
+    Fsharp [label="F#"]
+    Csharp [label="C#"]
+
+    incomplete -&gt; conf
+    incomplete -&gt; data
+    incomplete -&gt; build
+
+    data -&gt; JSON
+    data -&gt; INI
+
+    conf -&gt; YAML
+    conf -&gt; INI
+    conf -&gt; JSON
+    conf -&gt; Toml
+    conf -&gt; Starlark
+
+    build -&gt; Starlark
+    build -&gt; Meson
+
+    complete -&gt; HighLevelLangs
+    complete -&gt; incomplete
+
+    HighLevelLangs -&gt; functional
+    HighLevelLangs -&gt; procedural
+    HighLevelLangs -&gt; "object oriented"
+
+    procedural -&gt; Fortran
+    procedural -&gt; clike
+    procedural -&gt; Fsharp
+
+    "object oriented" -&gt; Java
+    "object oriented" -&gt; Python
+    "object oriented" -&gt; Cpp
+    "object oriented" -&gt; Csharp
+    "object oriented" -&gt; OCaml
+    "object oriented" -&gt; erlang
+
+    clike -&gt; C
+    clike -&gt; Csharp
+    clike -&gt; Cpp
+    clike -&gt; Rust
+    clike -&gt; Zig
+    clike -&gt; Go
+    clike -&gt; JavaScript
+    clike -&gt; TypeScript
+    clike -&gt; Kotlin
+
+    procedural -&gt; Python
+    procedural -&gt; Starlark
+    procedural -&gt; commandline
+
+    commandline -&gt; sh
+    commandline -&gt; zsh
+    commandline -&gt; fsh
+    commandline -&gt; bash
+    commandline -&gt; perl
+
+    functional -&gt; Haskell
+    functional -&gt; Lisp
+    functional -&gt; Fsharp
+    functional -&gt; OCaml
+}
+</code></pre>
+<pre><code class="language-dot process Languages by runtime">digraph {
+    Fsharp [label="F#"]
+    Cpp [label="C++"]
+    Csharp [label="C#"]
+    dotNET [label=".NET (MSIL/CIL)"]
+    LLVMIR [label="LLVM IR"]
+    browser [label="Browser IR"]
+    run [color=red]
+
+    browser -&gt; run [label="browser", color=red]
+    JVM -&gt; run [label="java", color=red]
+    dotNET -&gt; run [label="CLR", color=red]
+    dotNET -&gt; binary [label="coreRT"]
+    LLVMIR -&gt; run [label="llvm jit", color=red]
+    LLVMIR -&gt; assembly [label="llc"]
+    assembly -&gt; binary [label="assembler&amp;linker"]
+    binary -&gt; run [label="exec", color=red]
+    LLVMIR -&gt; WASM [label="llvm"]
+
+    Java -&gt; JVM [label="javac"]
+    Kotlin -&gt; JVM [label="kotlinc"]
+    OCaml -&gt; JVM [label="ocamlc"]
+
+    Csharp -&gt; dotNET [label="visual studio!?"]
+    Fsharp -&gt; dotNET [label="fsc"]
+
+    C -&gt; assembly [label="gcc"]
+    erlang -&gt; binary [label="erlc"]
+    Cpp -&gt; assembly [label="g++"]
+    Go -&gt; binary [label="go"]
+    Fortran -&gt; binary [label="gfortran\nifort\npgf77"]
+    Kotlin -&gt; LLVMIR [label="kotlinc", color=blue]
+    C -&gt; Zig [label="zig", color=blue]
+    Cpp -&gt; Zig [label="zig", color=blue]
+    Zig -&gt; binary [label="zig"]
+    Zig -&gt; LLVMIR [label="zig", color=blue]
+    Cpp -&gt; LLVMIR [label="clang"]
+    C -&gt; LLVMIR [label="clang"]
+    Rust -&gt; LLVMIR [label="rustc"]
+    Haskell -&gt; STG -&gt; Cmm [label="ghc"]
+    Cmm -&gt; binary [label="ghc", color=blue]
+    Cmm -&gt; LLVMIR [label="ghc", color=blue]
+    Cmm -&gt; C [label="ghc"]
+    JavaScript -&gt; browser [label="v8 and co"]
+    JavaScript -&gt; C [label="shermes", color=blue]
+    JavaScript -&gt; TypeScript [label="shermes", color=blue]
+    TypeScript -&gt; JavaScript [label="tsc"]
+    Kotlin -&gt; JavaScript [label="kotlinc", color=blue]
+    WASM -&gt; browser [label="v8 and co"]
+    Lisp -&gt; run [label="lisp", color=red]
+    sh -&gt; run [label="sh", color=red]
+    zsh -&gt; run [label="zsh", color=red]
+    fsh -&gt; run [label="fsh", color=red]
+    bash -&gt; run [label="bash", color=red]
+    perl -&gt; run [label="perl", color=red]
+    Python -&gt; run [label="cpython", color=red]
+}
+</code></pre>
 </div>
 <h2 id="my-favourite-approach-lambda-calculus-1"><a class="header" href="#my-favourite-approach-lambda-calculus-1">My favourite approach: Lambda Calculus</a></h2>
 <p>My favourite class of approaches is to build a small core language and build everything on top of that. This has a few benefits that I hope to detail here.</p>
@@ -1415,13 +1667,24 @@ UOW (Decision Systems Laboratory)
 <p>&nbsp;</p>
 <div class="flex-grid" style="font-size: 5rem">
   <div class="col">
-    <a href="./resume.html" class="center"><i class="fa-solid fa-file"></i></a>
+    <a href="./resume.html" class="center">
+      <i class="fa-solid fa-file"></i>
+    </a>
   </div>
   <div class="col">
-    <a href="https://www.linkedin.com/in/prattjr" class="center"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.linkedin.com/in/prattjr" class="center">
+      <i class="fab fa-linkedin"></i>
+    </a>
   </div>
   <div class="col">
-    <a href="https://github.com/Cypher1" class="center"><i class="fab fa-github"></i></a>
+    <a href="https://github.com/Cypher1" class="center">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <div class="col">
+    <a rel="me" href="https://hci.social/@CompilersJay" class="center">
+      <i class="fab fa-mastodon"></i>
+    </a>
   </div>
 </div>
 <div class="footer">
