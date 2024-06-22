@@ -31,4 +31,4 @@ deploy: prepare
 	cd $(BOOK) && \
 		git add -A && \
 		git commit -m "deployed on $(shell date) by ${USER}" || true && \
-		git push origin gh-pages
+		git push -f origin gh-pages
