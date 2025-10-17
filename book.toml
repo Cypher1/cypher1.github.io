@@ -3,7 +3,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Types and Terror"
-authors = ["Jay Pratt"]
+authors = ["Ellie Pratt"]
 
 [build]
 build-dir = "book"

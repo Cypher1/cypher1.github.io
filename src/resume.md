@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Résumé - Jay Pratt</title>
+<title>Résumé - Ellie Pratt</title>
 <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1">
-<meta name="Description" content="Résumé - Jay Pratt">
+<meta name="Description" content="Résumé - Ellie Pratt">
 <base href="/">
 <link rel="stylesheet" href="/bulma.css">
 <style>
@@ -22,7 +22,7 @@
 <div class="columns">
 <div class="column" style="align-items: center;">
 <h2 class="title is-narrow">
-Jay Pratt
+Ellie Pratt
 </h2>
 <p>5 years at Google.</p>
 <p>Internships at Facebook and Microsoft.</p>
@@ -60,7 +60,7 @@ Jay Pratt
     </svg></li-icon>
     </td>
     <td>
-    <a href="mailto:jay.riley.pratt@gmail.com"> jay.riley.pratt@gmail.com</a>
+    <a href="mailto:eleanor.pratty@gmail.com"> eleanor.pratty@gmail.com</a>
     </td>
     </tr>
     <tr>

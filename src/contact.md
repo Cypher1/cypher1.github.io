@@ -25,11 +25,6 @@ Feel free to write me an email [here](mailto:jp10010101010000@gmail.com) if you 
       <i class="fab fa-github"></i>
     </a>
   </div>
-  <div class="col">
-    <a rel="me" href="https://hci.social/@CompilersJay" class="center">
-      <i class="fab fa-mastodon"></i>
-    </a>
-  </div>
 </div>
 
 <div class="footer">

@@ -10,7 +10,7 @@ feature_image: "/assets/imgs/koz2.JPG"
 image: "/assets/imgs/koz2.JPG"
 -->
 
-Hi, I'm <span class="name">Jay</span>. I write software for a living and actually really enjoy it. Well, most of the time.
+Hi, I'm <span class="name">Ellie</span>. I write software for a living and actually really enjoy it. Well, most of the time.
 
 I keep finding myself wanting to write up some of the things I've learnt about and the mistakes I've made. So here we are. Hopefully someone can learn from it and possibly avoid the same issues that I had.
 
